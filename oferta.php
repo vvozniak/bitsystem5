@@ -1,7 +1,7 @@
 
 <?php
 /**
- * Template Name: Oferta
+ * Template Name: Zrealizowane projekty
  * 
  * Renderuje wszystkie realizacje w zależności od wybranego typu wizualizacji
  * Typy: hero, highlight, standard
@@ -61,7 +61,7 @@ get_header(); ?>
   <div class="hero-content" style="position:relative; margin-left:16.66vw; max-width:55vw; z-index:2;">
     <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.2; font-size:3.2vw; font-family:'Manrope', sans-serif;">
       <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.3vw 1vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800;">
-        Realizacje
+        Projekty
       </span>, które łączą świat
     </p>
 
@@ -101,6 +101,58 @@ get_header(); ?>
     </a>
   </div>
 </section>
+
+
+<!-- SEKCJA: WPROWADZENIE DO REALIZACJI -->
+<section class="intro-section" style="
+    font-family: 'Manrope', sans-serif; 
+    padding: 5vw 3vw; 
+    background-color: white;
+">
+    <div class="intro-container" style="
+        max-width: 90vw;
+        margin: 0 auto;
+    ">
+        <p class="intro-label" style="
+            font-size: 1.67vw; 
+            font-weight: 300; 
+            color: #1a1a1a; 
+            margin-bottom: 0.5vw;
+        ">
+            Nasza oferta
+        </p>
+        
+        <h2 class="intro-title" style="
+            font-size: 1.88vw; 
+            font-weight: 600; 
+            line-height: 1.2; 
+            color: #1a1a1a; 
+            margin-bottom: 1.5vw;
+        ">
+            Zanurz się z nami w świat 
+            <span style="
+                background-color: #0BA0D882;
+                color: white;
+                padding: 0.2vw 0.8vw;
+                display: inline-block;
+            ">
+                wyjątkowych doświadczeń
+            </span>
+        </h2>
+        
+        <p class="intro-description" style="
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1.04vw; 
+            line-height: 1.6; 
+            color: #4a4a4a;
+            max-width: 60vw;
+        ">
+            Organizujemy wyjątkowe spotkania i wydarzenia kulturalne, które pozwalają uczestnikom 
+            przenieść się w niezwykły świat tradycji i kolorów Afryki.
+        </p>
+    </div>
+</section>
+
 
 <?php
 // Pobieranie wszystkich postów typu 'realizacje'

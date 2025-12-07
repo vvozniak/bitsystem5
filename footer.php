@@ -190,29 +190,6 @@ $bottom_offset = '3vw';
     
 </footer>
 
-<a href="#top" 
-   class="fixed-scroll-up"
-   style="
-        position: fixed;
-        right: <?php echo $right_offset; ?>;
-        bottom: <?php echo $bottom_offset; ?>;
-        color: <?php echo $cta_color; ?>;
-        font-size: 2.5vw;
-        text-decoration: none;
-        z-index: 100;
-        background: white; 
-        border-radius: 50%;
-        width: 3.5vw;
-        height: 3.5vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    ">
-    &uarr;
-</a>
-
-
 <?php wp_footer(); ?>
 
 </body>
