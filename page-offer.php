@@ -226,8 +226,65 @@ $hero_background = get_field('offer_hero_background_image');
 
 
 
+<?php 
+// Pobieranie logotypów z Custom Post Type
+$logos_query = new WP_Query([
+    'post_type' => 'loga_klientow',
+    'posts_per_page' => -1,
+    'orderby' => 'menu_order',
+    'order' => 'ASC'
+]);
 
+$logos = [];
+if ($logos_query->have_posts()) {
+    while ($logos_query->have_posts()) {
+        $logos_query->the_post();
+        $logo_image = get_field('logo_image');
+        $logo_link = get_field('logo_link');
+        $logo_alt = get_field('logo_alt');
+        
+        if ($logo_image) {
+            $logos[] = [
+                'url' => $logo_image['url'],
+                'alt' => $logo_alt ?: get_the_title(),
+                'link' => $logo_link,
+                'height' => !empty($logo_image['height']) ? $logo_image['height'] : 100
+            ];
+        }
+    }
+    wp_reset_postdata();
+}
 
+// Jeśli są logotypy, wyświetl sekcję
+if (!empty($logos)) :
+    // Podwajamy listę dla płynnej animacji
+    $scrolling_logos = array_merge($logos, $logos);
+?>
+
+<section class="logos-section">
+  <div class="logos-strip-container">
+    <div class="logos-strip">
+      <?php foreach ($scrolling_logos as $logo) : ?>
+      <?php if (!empty($logo['link'])) : ?>
+      <a href="<?php echo esc_url($logo['link']); ?>" target="_blank" rel="noopener">
+        <img src='<?php echo esc_url($logo['url']); ?>' 
+             alt="<?php echo esc_attr($logo['alt']); ?>" 
+             class="logo-item" 
+             style="height: auto; max-height: 5vw;">
+      </a>
+      <?php else : ?>
+      <img src='<?php echo esc_url($logo['url']); ?>' 
+           alt="<?php echo esc_attr($logo['alt']); ?>" 
+           class="logo-item" 
+           style="height: auto; max-height: 5vw;">
+      <?php endif; ?>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<?php else : ?>
+<!-- Fallback: hardcoded logos if CPT is empty -->
 <section class="logos-section">
   <div class="logos-strip-container">
     <div class="logos-strip">
@@ -264,6 +321,7 @@ $hero_background = get_field('offer_hero_background_image');
     </div>
   </div>
 </section>
+<?php endif; ?>
 
 
 
