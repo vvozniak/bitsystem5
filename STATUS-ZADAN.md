@@ -28,18 +28,26 @@
 
 ### Karuzela logotypów
 
-**Status: ⚠️ CZĘŚCIOWO ZROBIONE**
+**Status: ✅ ZROBIONE**
 
-- ❌ **NIE ZROBIONE:** Brak custom post type `loga_klientow`
-- ✅ **ZROBIONE:** Karuzela działa na stronie głównej (`index.php` linie 462-504)
-- ⚠️ **PROBLEM:** Logotypy są pobierane ze statycznych pól ACF (`partner_logo_1` do `partner_logo_6` na stronie ID 43), a nie z custom post type
-- ⚠️ **PROBLEM:** Na stronie `page-offer.php` (linie 180-215) logotypy są hardcoded (statyczne obrazy)
+- ✅ Custom Post Type `loga_klientow` utworzony w `functions.php` (linie 204-232)
+- ✅ Pola ACF dla CPT utworzone w `acf-loga-klientow.json`:
+  - `logo_image` - obrazek logo (wymagane)
+  - `logo_link` - link do strony klienta (opcjonalne)
+  - `logo_alt` - tekst alternatywny (opcjonalne)
+- ✅ Kod karuzeli na stronie głównej zaktualizowany (`index.php` linie 463-503):
+  - Pobiera logotypy z CPT `loga_klientow`
+  - Fallback do starych pól ACF jeśli CPT nie ma logotypów
+- ✅ Kod karuzeli na stronie oferty zaktualizowany (`page-offer.php` linie 230-280):
+  - Pobiera logotypy z CPT `loga_klientow`
+  - Obsługuje linki do stron klientów
 
-**Do zrobienia:**
-1. Utworzyć custom post type `loga_klientow` w `functions.php`
-2. Dodać pole ACF dla logo (obrazek) do tego post type
-3. Zmienić kod karuzeli na stronie głównej, aby pobierał wpisy z CPT zamiast statycznych pól
-4. Zaktualizować `page-offer.php`, aby również używał CPT
+**Szczegóły implementacji:**
+- CPT: `functions.php` linie 204-232
+- ACF: `acf-loga-klientow.json`
+- Menu: "Loga klientów" w panelu administracyjnym (ikona: `dashicons-images-alt2`)
+- Strona główna: `index.php` linie 463-503
+- Strona oferty: `page-offer.php` linie 230-280
 
 ---
 
@@ -74,24 +82,33 @@
 
 ### Regulamin i Polityka prywatności
 
-**Status: ❌ NIE ZROBIONE**
+**Status: ✅ ZROBIONE (technicznie) / ⚠️ DO WYKONANIA W PANELU WP**
 
-- ❌ Brak szablonu `page-plain.php`
+- ✅ Szablon `page-plain.php` utworzony i działa
 - ✅ Wsparcie Gutenberga jest w `functions.php` (linie 20-23):
   - `add_theme_support('wp-block-styles')`
   - `add_theme_support('editor-styles')`
   - `add_editor_style('css/editor-style.css')`
 
-**Do zrobienia:**
-1. Utworzyć szablon `page-plain.php` zawierający:
-   - Navbar (header)
-   - Tytuł strony
-   - Treść Gutenberga (`the_content()`)
-   - Footer
-2. Utworzyć dwie puste podstrony w WordPress:
-   - Regulamin
-   - Polityka prywatności
-3. Przypisać szablon `page-plain.php` do tych stron
+**Szczegóły implementacji:**
+- Szablon: `page-plain.php` zawiera:
+  - Navbar (`get_header()`)
+  - Tytuł strony (`the_title()`)
+  - Treść Gutenberga (`the_content()`)
+  - Footer (`get_footer()`)
+- Template Name: "Prosta strona (Plain)"
+
+**Do zrobienia w panelu WordPress:**
+1. Utworzyć podstronę "Regulamin":
+   - Strony → Dodaj nową
+   - Tytuł: "Regulamin"
+   - Szablon strony: "Prosta strona (Plain)"
+   - Opublikować
+2. Utworzyć podstronę "Polityka prywatności":
+   - Strony → Dodaj nową
+   - Tytuł: "Polityka prywatności"
+   - Szablon strony: "Prosta strona (Plain)"
+   - Opublikować
 
 ---
 
@@ -140,21 +157,21 @@
 
 ### Podstrona „Oferta"
 
-**Status: ⚠️ CZĘŚCIOWO ZROBIONE**
+**Status: ✅ ZROBIONE**
 
-- ✅ Strona `page-offer.php` istnieje
-- ❌ **PROBLEM:** Treści są hardcoded (statyczne), nie przez ACF
-  - Linie 88-116: nagłówki i opisy są wpisane bezpośrednio w kodzie
-  - Linie 122-129: kafle oferty są w tablicy `$defaults` (hardcoded)
-- ⚠️ Plik `acf-oferta.json` dotyczy realizacji, nie strony oferty
+- ✅ Strona `page-offer.php` istnieje i używa ACF
+- ✅ Grupa pól ACF dla strony oferty utworzona w `acf-page-offer.json`
+- ✅ Wszystkie treści są edytowalne przez ACF:
+  - Sekcja Hero: `offer_hero_title_highlight`, `offer_hero_title_rest`, `offer_hero_description`, `offer_hero_background_image`
+  - Sekcja Oferta: `offer_section_subtitle`, `offer_section_title_before`, `offer_section_title_highlight`, `offer_section_description`, `offer_cta_text`, `offer_cta_link`
+  - Kafle oferty: `offer_card_1` do `offer_card_6` (każdy jako Group z polami: `title`, `description`, `icon`, `color`, `width`)
+  - Sekcja Approach: `offer_approach_subtitle`, `offer_approach_title`, `offer_approach_description`, `offer_approach_highlight_word`, `offer_approach_highlight_text`, `offer_approach_image_small`, `offer_approach_image_large`, `offer_approach_background_image`
 
-**Do zrobienia:**
-1. Utworzyć grupę pól ACF dla strony oferty (podobnie jak na stronie głównej)
-2. Dodać pola ACF dla:
-   - Nagłówka sekcji (`offer_subtitle`, `offer_title`, `offer_description`)
-   - Każdego kafelka oferty (tytuł, opis, ikona, kolor, szerokość)
-3. Zaktualizować `page-offer.php`, aby pobierał dane z ACF zamiast hardcoded wartości
-4. Przypisać grupę pól ACF do strony oferty
+**Szczegóły implementacji:**
+- ACF: `acf-page-offer.json` (426 linii)
+- Lokalizacja: `page_template == page-offer.php`
+- Plik: `page-offer.php` używa `get_field()` dla wszystkich sekcji
+- Fallback: wartości domyślne w kodzie, jeśli pola ACF są puste
 
 ---
 
@@ -284,17 +301,18 @@
 - **Aktualności** (WordPress posts + single + ACF)
 - **Stopka + social media** (ACF globalne ustawienia)
 - **Strona główna - treści ACF** (wszystkie sekcje edytowalne przez ACF)
+- **Karuzela logotypów** (CPT `loga_klientow` + ACF + zaktualizowane strony)
+- **Oferta** (ACF dla wszystkich sekcji, pełna edytowalność)
+- **Strony statyczne** (szablon `page-plain.php` utworzony)
 
 ### ⚠️ Częściowo zrobione:
-- **Strona główna - karuzela logotypów** (działa, ale bez CPT - używa statycznych pól ACF)
 - **Formularz kontaktowy** (działa, ale bez Contact Form 7 i Post SMTP)
-- **Oferta** (strona istnieje, ale treści hardcoded - brak ACF)
+- **Strony statyczne** (szablon gotowy, ale trzeba utworzyć podstrony w panelu WordPress)
 
 ### ❌ Nie zrobione:
-- **Strony statyczne** (brak `page-plain.php` dla Regulaminu i Polityki prywatności)
 - **Optymalizacja obrazów** (brak WebP Express, obrazy nie są w WebP)
 - **Bezpieczeństwo** (brak wtyczek: WPS Hide Login, Limit Login Attempts Reloaded)
 
 ---
 
-**Ostatnia aktualizacja:** Analiza kodu z dnia implementacji
+**Ostatnia aktualizacja:** 2024 - po implementacji CPT logotypów, ACF dla oferty i szablonu page-plain.php
