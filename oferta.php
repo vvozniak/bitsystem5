@@ -49,14 +49,7 @@
  * 
  */
 
-$pageTitle = "Realizacje";
-?>
-
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-
-<?php get_header(); ?>
+get_header(); ?>
 
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:9.01vw;">
   <img 
@@ -549,7 +542,7 @@ if ($realizacje_query->have_posts()) :
                                         font-size:1.25vw; 
                                         font-weight:500; 
                                         padding:1vw 2.5vw; 
-                                        border-radius:5px;
+                                        border-radius:10px;
                                         text-decoration: none;
                                     ">
                                     <?php echo esc_html($cta_text); ?>    
@@ -579,7 +572,7 @@ if ($realizacje_query->have_posts()) :
                             
                             <h2 class="project-title" style="
                                 font-size: 1.88vw; 
-                                font-weight: 600; 
+                                font-weight: 700; 
                                 line-height: 1.2; 
                                 margin-bottom: 2vw;
                             ">
@@ -671,7 +664,7 @@ if ($realizacje_query->have_posts()) :
                                         font-size:1.25vw; 
                                         font-weight:500; 
                                         padding:1vw 2.5vw; 
-                                        border-radius:40px;
+                                        border-radius:10px;
                                         text-decoration: none;
                                     ">
                                     <?php echo esc_html($cta_text); ?>    
@@ -713,6 +706,6 @@ endif;
 ?>
 
 <?php
-include 'contact.php';
-include 'footer.php';
+get_template_part('contact');
+get_footer();
 ?>
