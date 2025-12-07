@@ -1,6 +1,16 @@
 .kim-jestesmy{
     width: 100%;
-     background: #fff;
+    background: #fff;
+    position: relative; /* Dodane dla pozycjonowania tła */
+}
+
+/* Tło pod sekcją osób */
+.kj-dol {
+    position: relative;
+    background-image: url('../images/tlo.png'); /* Dodanie zdjęcia w tle */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -8,6 +18,7 @@
     margin-left: 16.67vw;
     margin-right: 16.67vw;
     height: 17.39vw;
+    margin-top: 3vw; /* Zwiększony odstęp od górnego menu */
    
 }
 .kj-title{
@@ -65,6 +76,7 @@ font-size: 1.04vw;
         /* Ustawienie marginesu między wierszami */
         .person-row:first-of-type {
             margin-bottom: 5vw;
+            border-bottom: none; /* Usunięcie widocznej linii poziomej */
         }
         .person-row:last-of-type {
             margin-top: 5vw;
@@ -95,8 +107,26 @@ font-size: 1.04vw;
         }
 
         /* Michał Cichoracki: Obraz po lewej, tekst po prawej */
+        .michal-row {
+            position: relative;
+        }
+        
+        .michal-row::before {
+            content: '';
+            position: absolute;
+            left: -5vw;
+            top: -3vw;
+            width: 15vw;
+            height: 15vw;
+            background-color: rgba(11, 160, 216, 0.3);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
         .michal-row .person-image {
             margin-right: 5vw;
+            position: relative;
+            z-index: 2;
             /* Kształt: ścięty prawy górny róg */
             clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
         }
@@ -104,9 +134,25 @@ font-size: 1.04vw;
         /* Dorota Markiewicz: Obraz po prawej, tekst po lewej (odwrócony układ) */
         .dorota-row {
             flex-direction: row-reverse; /* Odwraca kolejność elementów */
+            position: relative;
         }
+        
+        .dorota-row::before {
+            content: '';
+            position: absolute;
+            right: -5vw;
+            bottom: -3vw;
+            width: 18vw;
+            height: 18vw;
+            background-color: rgba(11, 160, 216, 0.25);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
         .dorota-row .person-image {
             margin-left: 5vw; /* Dodaje margines z lewej strony obrazu */
+            position: relative;
+            z-index: 2;
             /* Kształt: ścięty lewy górny róg */
             clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
         }

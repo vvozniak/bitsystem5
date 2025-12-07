@@ -53,7 +53,7 @@ $grid_total_width = 'calc(3 * ' . $kafelek_size . ' + 2 * ' . $kafelek_gap . ')'
                       aktualności
                   </span>
               </h2>
-              <p class="section-description" style="font-family: 'IBM Plex Sans', sans-serif; font-size:1.04vw; font-weight:400; line-height:1.6; color:#4a4a4a; max-width:70%;">
+              <p class="section-description" style="font-family: 'IBM Plex Sans', sans-serif; font-size:1.04vw; font-weight:600; line-height:1.6; color:#4a4a4a; max-width:70%;">
                   Blog pełen inspiracji, relacji z wydarzeń i praktycznych porad. Każdy wpis zawiera tytuł, lead oraz wyróżniony obrazek.
               </p>
           </div>

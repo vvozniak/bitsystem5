@@ -226,7 +226,8 @@ if ($realizacje_query->have_posts()) :
                     <div class="photo-column" style="
                         width: 37.18vw; 
                         position: relative;
-                        left: -5.93vw; 
+                        left: -5.93vw;
+                        z-index: 1; /* Poprawiony z-index aby nie nachodzić na tekst */
                     ">
                         <?php if ($main_image) : ?>
                             <img 
@@ -237,14 +238,17 @@ if ($realizacje_query->have_posts()) :
                                     height: auto; 
                                     object-fit: cover; 
                                     border-radius: 10px;
+                                    transition: transform 0.3s ease, box-shadow 0.3s ease;
                                 "
+                                onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.2)'"
+                                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
                             >
                         <?php endif; ?>
                     </div>
 
                     <div class="info-column" style="
                         width: 44.6vw;
-                        margin-left: -5.93vw; 
+                        margin-left: 3vw; /* Zwiększony margines - przesunięcie w prawo */
                         padding-right: 3vw; 
                     ">
                         
@@ -255,7 +259,17 @@ if ($realizacje_query->have_posts()) :
                             margin-bottom: 1vw;
                         ">
                             <?php echo esc_html($title_line1); ?>
-                            <span style="display: block; font-size: 2.2vw; font-weight: 800;">
+                            <span style="
+                                display: block; 
+                                font-size: 2.2vw; 
+                                font-weight: 800;
+                                background-color: #0BA0D882;
+                                color: white;
+                                padding: 0.3vw 1vw;
+                                border-radius: 20px; /* Dodane zaokrąglenia */
+                                display: inline-block;
+                                margin-top: 0.5vw;
+                            ">
                                 <?php echo esc_html($title_line2); ?>
                             </span>
                         </h3>
@@ -312,13 +326,16 @@ if ($realizacje_query->have_posts()) :
                                     background: #0BA0D8; 
                                     color: white; 
                                     font-family:'Inter', sans-serif; 
-                                    font-size:1.25vw; 
-                                    font-weight:500; 
-                                    padding:1vw 2.5vw; 
+                                    font-size:0.937vw; 
+                                    font-weight:600; 
+                                    padding:12px 35px; 
                                     border-radius: 10px;
                                     text-decoration: none;
                                     margin-top: 3vw;
-                                ">
+                                    transition: background-color 0.3s ease, transform 0.2s ease;
+                                "
+                                onmouseover="this.style.backgroundColor='#0888ba'; this.style.transform='translateY(-2px)'"
+                                onmouseout="this.style.backgroundColor='#0BA0D8'; this.style.transform='translateY(0)'">
                                 <?php echo esc_html($cta_text); ?>    
                             </a>
                         <?php endif; ?>
@@ -335,7 +352,10 @@ if ($realizacje_query->have_posts()) :
                                     object-fit: cover; 
                                     border-radius: 10px;
                                     margin-top: 2vw;
+                                    transition: transform 0.3s ease, box-shadow 0.3s ease;
                                 "
+                                onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.2)'"
+                                onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
                             >
                         <?php endif; ?>
                     </div>
@@ -490,7 +510,10 @@ if ($realizacje_query->have_posts()) :
                                         margin-top: 1vw; 
                                         margin-left: -4vw;
                                         z-index: 10;
+                                        transition: transform 0.3s ease, box-shadow 0.3s ease;
                                     "
+                                    onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.15)'"
+                                    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
                                 >
                             <?php endif; ?>
                         </div>
@@ -720,12 +743,15 @@ if ($realizacje_query->have_posts()) :
                                         background: #0BA0D8; 
                                         color: white; 
                                         font-family:'Inter', sans-serif; 
-                                        font-size:1.25vw; 
-                                        font-weight:500; 
-                                        padding:1vw 2.5vw; 
+                                        font-size:0.937vw; 
+                                        font-weight:600; 
+                                        padding:12px 35px; 
                                         border-radius:10px;
                                         text-decoration: none;
-                                    ">
+                                        transition: background-color 0.3s ease, transform 0.2s ease;
+                                    "
+                                    onmouseover="this.style.backgroundColor='#0888ba'; this.style.transform='translateY(-2px)'"
+                                    onmouseout="this.style.backgroundColor='#0BA0D8'; this.style.transform='translateY(0)'">
                                     <?php echo esc_html($cta_text); ?>    
                                 </a>
                             <?php endif; ?>

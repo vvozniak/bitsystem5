@@ -98,8 +98,8 @@ $hero_background = get_field('offer_hero_background_image');
     $section_description = get_field('offer_section_description') ?: 'Działamy na styku biznesu, nauki i kultury. Organizujemy wydarzenia, które łączą ludzi, wiedzę i technologie, wspierając rozwój współpracy ponad granicami. Sprawdź, czym się zajmujemy:';
     ?>
     <div class="header-content" style="
-        margin: 0 auto 3vw;
-        padding: 0 3vw; /* Przykładowy margines boczny dla nagłówka */
+        margin: 0 16.67vw 3vw; /* Przesunięcie w prawo zgodnie z resztą strony */
+        padding: 0;
     ">
         <p class="section-subtitle1" style="
             font-size: 1.67vw; 
@@ -123,6 +123,7 @@ $hero_background = get_field('offer_hero_background_image');
                 padding: 0.2vw 0.8vw;
                 display: inline-block;
                 white-space: nowrap;
+                border-radius: 20px; /* Dodane zaokrąglenia */
             ">
                 <?php echo esc_html($section_title_highlight); ?>
             </span>
@@ -138,7 +139,7 @@ $hero_background = get_field('offer_hero_background_image');
         </p>
     </div>
     <!-- 🔹 KAFELKI (Z ACF POZOSTAJĄCE, UKŁAD LEWO-PRAWO) -->
-    <div class="offer-grid" style="width:100vw;position:relative;left:50%;transform:translateX(-50%);padding:0 1.04vw;overflow:hidden;">
+    <div class="offer-grid" style="width:100vw;position:relative;left:50%;transform:translateX(-50%);padding:0;overflow:hidden;margin:0 auto;max-width:100%;">
         <?php
         // Pobieranie kafelków z ACF
         $cards = [];
