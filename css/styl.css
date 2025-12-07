@@ -383,8 +383,13 @@
   width: auto;
   height: 35.41vw;
   object-fit: cover;
-  border-radius: 20px; /
-  
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masai-left img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Prawa kolumna - treść */
@@ -428,7 +433,7 @@
 /* Kontener małego obrazka i ikon */
 .masai-content-block {
   display: flex;
-  align-items: center; /* Wyśrodkowanie w pionie */
+  align-items: flex-start; /* Wyrównanie do góry */
   gap: 2.03vw; /* Odstęp między obrazkiem a ikonami */
   margin-bottom: 3.38vw;
 }
@@ -445,6 +450,12 @@
   object-fit: cover;
   border-radius: 10px; 
   display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masai-small:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Kontener dla ikon */
@@ -752,6 +763,13 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1.2vw; /* Zwiększony padding zgodnie z Figmą */
+}
+
+.card-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .card-title {
@@ -762,7 +780,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  text-align: center; /* Wyśrodkowanie tekstu */
 }
 
 .card-text {
@@ -772,6 +790,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center; /* Wyśrodkowanie tekstu */
 }
 
 /* Hover animation for offer cards */
@@ -984,10 +1003,15 @@ html, body {
 .approach-section {
   width: 100%;
   padding: 5vw ;
-  
+  position: relative; /* Dodane dla kontroli z-index */
   background: #fff;
-  overflow: hidden;
+  overflow: visible; /* Zmienione z hidden na visible */
   box-sizing: border-box;
+}
+
+.approach-container {
+  position: relative;
+  z-index: 2; /* Zapewnia, że treść jest nad elementami graficznymi */
 }
 
 .approach-row-content::after {
@@ -999,6 +1023,8 @@ html, body {
 .approach-tlo {
   float: left;
   width: 16.66%;
+  position: relative;
+  z-index: 1; /* Element graficzny pod treścią */
 }
 
 .approach-left {
@@ -1557,6 +1583,7 @@ html, body {
     display: block !important;            /* blok, żeby można go centrować */
     margin: 4vw auto 0 auto !important;   /* auto po bokach = środek */
     text-align: center !important;        /* tekst w przycisku też wyśrodkowany */
+    text-decoration: none !important;     /* Usunięcie podkreślenia */
   }
 
   /* 🔹 Ikony ×4 – wyśrodkowane */

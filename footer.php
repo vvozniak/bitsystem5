@@ -72,7 +72,7 @@ $bottom_offset = '3vw';
             <?php if ($phone) : ?>
             <div class="contact-detail" style="display: flex; align-items: center; margin-bottom: 1.2vw; font-size: 0.94vw;">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/telephone 1.png" alt="Telefon" 
-                     style="width: 1vw; height: 1vw; margin-right: 1vw; filter: sepia(100%) saturate(300%) hue-rotate(180deg) brightness(1.2);">
+                     style="width: 1.5vw; height: 1.5vw; margin-right: 1vw; filter: brightness(0) invert(1);">
                 <a href="tel:<?php echo esc_attr(str_replace(' ', '', $phone)); ?>" style="color: inherit; text-decoration: none;">
                     <?php echo esc_html($phone); ?>
                 </a>
@@ -82,7 +82,7 @@ $bottom_offset = '3vw';
             <?php if ($email) : ?>
             <div class="contact-detail" style="display: flex; align-items: center; margin-bottom: 1.2vw; font-size: 0.94vw;">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/mail 1.png" alt="Email" 
-                     style="width: 1vw; height: 1vw; margin-right: 1vw; filter: sepia(100%) saturate(300%) hue-rotate(180deg) brightness(1.2);">
+                     style="width: 1.5vw; height: 1.5vw; margin-right: 1vw; filter: brightness(0) invert(1);">
                 <a href="mailto:<?php echo esc_attr($email); ?>" style="color: inherit; text-decoration: none;">
                     <?php echo esc_html($email); ?>
                 </a>
@@ -92,7 +92,7 @@ $bottom_offset = '3vw';
             <?php if ($address1 && $address2) : ?>
             <div class="contact-detail" style="display: flex; align-items: flex-start; margin-bottom: 1.2vw; font-size: 0.94vw;">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/maps-and-flags 1.png" alt="Lokalizacja" 
-                     style="width: 1vw; height: 1vw; margin-right: 1vw; margin-top: 0.2vw; filter: sepia(100%) saturate(300%) hue-rotate(180deg) brightness(1.2);">
+                     style="width: 1.5vw; height: 1.5vw; margin-right: 1vw; margin-top: 0.2vw; filter: brightness(0) invert(1);">
                 <div style="color: inherit;">
                     <?php echo esc_html($address1); ?><br><?php echo esc_html($address2); ?>
                 </div>
