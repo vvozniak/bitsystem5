@@ -198,4 +198,37 @@ function cpt_realizacje_init() {
 }
 add_action('init', 'cpt_realizacje_init');
 
+// ============================
+// Custom Post Type: Loga Klientów
+// ============================
+function cpt_loga_klientow_init() {
+    $labels = [
+        'name'               => 'Loga klientów',
+        'singular_name'      => 'Logo klienta',
+        'menu_name'          => 'Loga klientów',
+        'name_admin_bar'     => 'Logo klienta',
+        'add_new'            => 'Dodaj nowe',
+        'add_new_item'       => 'Dodaj nowe logo',
+        'edit_item'          => 'Edytuj logo',
+        'new_item'           => 'Nowe logo',
+        'view_item'          => 'Zobacz logo',
+        'search_items'       => 'Szukaj logo',
+        'not_found'          => 'Nie znaleziono logo',
+        'not_found_in_trash' => 'Brak logo w koszu',
+    ];
+
+    $args = [
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => false,
+        'show_in_rest'       => false,
+        'menu_position'      => 6,
+        'menu_icon'          => 'dashicons-images-alt2',
+        'supports'           => ['title', 'thumbnail'],
+    ];
+
+    register_post_type('loga_klientow', $args);
+}
+add_action('init', 'cpt_loga_klientow_init');
+
 ?>

@@ -460,15 +460,45 @@ function get_card_icon_url($card) {
 </section>
 
 <?php 
-$page_id = 43; 
+// Pobieranie logotypów z Custom Post Type
+$logos_query = new WP_Query([
+    'post_type' => 'loga_klientow',
+    'posts_per_page' => -1,
+    'orderby' => 'menu_order',
+    'order' => 'ASC'
+]);
 
-// Ręczne pobieranie 6 pól logotypów
 $logos = [];
-for ($i = 1; $i <= 6; $i++) {
-    // get_field zwróci Tablicę (Array)
-    $logo = get_field('partner_logo_' . $i, $page_id);
-    if ($logo) {
-        $logos[] = $logo;
+if ($logos_query->have_posts()) {
+    while ($logos_query->have_posts()) {
+        $logos_query->the_post();
+        $logo_image = get_field('logo_image');
+        $logo_link = get_field('logo_link');
+        $logo_alt = get_field('logo_alt');
+        
+        if ($logo_image) {
+            $logos[] = [
+                'url' => $logo_image['url'],
+                'alt' => $logo_alt ?: get_the_title(),
+                'link' => $logo_link
+            ];
+        }
+    }
+    wp_reset_postdata();
+}
+
+// Fallback do starych pól ACF jeśli CPT nie ma logotypów
+if (empty($logos)) {
+    $page_id = 43; 
+    for ($i = 1; $i <= 6; $i++) {
+        $logo = get_field('partner_logo_' . $i, $page_id);
+        if ($logo) {
+            $logos[] = [
+                'url' => $logo['url'],
+                'alt' => $logo['alt'] ?: 'Partner Logo',
+                'link' => ''
+            ];
+        }
     }
 }
 
@@ -491,11 +521,21 @@ $scrolling_logos = array_merge($logos, $logos);
             foreach ($scrolling_logos as $logo) : 
             ?>
                 <div class="logo-item">
+                    <?php if (!empty($logo['link'])) : ?>
+                    <a href="<?php echo esc_url($logo['link']); ?>" target="_blank" rel="noopener">
+                        <img 
+                            src="<?php echo esc_url($logo['url']); ?>" 
+                            alt="<?php echo esc_attr($logo['alt']); ?>" 
+                            style="height: 100%; object-fit: contain;" 
+                        >
+                    </a>
+                    <?php else : ?>
                     <img 
                         src="<?php echo esc_url($logo['url']); ?>" 
-                        alt="<?php echo esc_attr($logo['alt'] ?: 'Partner Logo'); ?>" 
+                        alt="<?php echo esc_attr($logo['alt']); ?>" 
                         style="height: 100%; object-fit: contain;" 
                     >
+                    <?php endif; ?>
                 </div>
             <?php endforeach; ?>
             
