@@ -1,0 +1,830 @@
+{
+    "key": "group_realizacje_oferta",
+    "title": "Realizacje - Oferta",
+    "fields": [
+        {
+            "key": "field_realizacja_type",
+            "label": "Typ sekcji",
+            "name": "realizacja_type",
+            "type": "select",
+            "instructions": "Wybierz styl wizualizacji dla tej realizacji",
+            "required": 1,
+            "choices": {
+                "hero": "Hero (Moja Afryka - Podróż z Masajem)",
+                "highlight": "Highlight (Kolej na Kobiety)",
+                "standard": "Standard (Projekt naprzemiennie)"
+            },
+            "default_value": "standard",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "return_format": "value"
+        },
+        {
+            "key": "field_hero_title_line1",
+            "label": "Tytuł - Linia 1",
+            "name": "hero_title_line1",
+            "type": "text",
+            "instructions": "Pierwsza linia tytułu dla sekcji Hero",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_title_line2",
+            "label": "Tytuł - Linia 2",
+            "name": "hero_title_line2",
+            "type": "text",
+            "instructions": "Druga linia tytułu dla sekcji Hero (pogrubiona)",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_description",
+            "label": "Opis",
+            "name": "hero_description",
+            "type": "textarea",
+            "instructions": "Opis dla sekcji Hero",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_program_title",
+            "label": "Tytuł programu",
+            "name": "hero_program_title",
+            "type": "text",
+            "instructions": "Np. 'Program wydarzenia obejmuje:'",
+            "default_value": "Program wydarzenia obejmuje:",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item1_text",
+            "label": "Element 1 - Tekst",
+            "name": "hero_item1_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item1_icon",
+            "label": "Element 1 - Ikona",
+            "name": "hero_item1_icon",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item2_text",
+            "label": "Element 2 - Tekst",
+            "name": "hero_item2_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item2_icon",
+            "label": "Element 2 - Ikona",
+            "name": "hero_item2_icon",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item3_text",
+            "label": "Element 3 - Tekst",
+            "name": "hero_item3_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item3_icon",
+            "label": "Element 3 - Ikona",
+            "name": "hero_item3_icon",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item4_text",
+            "label": "Element 4 - Tekst",
+            "name": "hero_item4_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item4_icon",
+            "label": "Element 4 - Ikona",
+            "name": "hero_item4_icon",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item5_text",
+            "label": "Element 5 - Tekst",
+            "name": "hero_item5_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item5_icon",
+            "label": "Element 5 - Ikona",
+            "name": "hero_item5_icon",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item6_text",
+            "label": "Element 6 - Tekst",
+            "name": "hero_item6_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item6_icon",
+            "label": "Element 6 - Ikona",
+            "name": "hero_item6_icon",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item7_text",
+            "label": "Element 7 - Tekst",
+            "name": "hero_item7_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item7_icon",
+            "label": "Element 7 - Ikona",
+            "name": "hero_item7_icon",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item8_text",
+            "label": "Element 8 - Tekst",
+            "name": "hero_item8_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_item8_icon",
+            "label": "Element 8 - Ikona",
+            "name": "hero_item8_icon",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_main_image",
+            "label": "Główne zdjęcie",
+            "name": "hero_main_image",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Duże zdjęcie po lewej stronie",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_small_image",
+            "label": "Małe zdjęcie",
+            "name": "hero_small_image",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Małe zdjęcie po prawej stronie",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_cta_text",
+            "label": "CTA - Tekst",
+            "name": "hero_cta_text",
+            "type": "text",
+            "default_value": "Dowiedz się więcej",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_hero_cta_link",
+            "label": "CTA - Link",
+            "name": "hero_cta_link",
+            "type": "url",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "hero"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_subtitle",
+            "label": "Podtytuł",
+            "name": "highlight_subtitle",
+            "type": "text",
+            "instructions": "Np. 'Konferencja'",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_title_before",
+            "label": "Tytuł - Przed highlightem",
+            "name": "highlight_title_before",
+            "type": "text",
+            "instructions": "Tekst przed wyróżnionym słowem",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_title_highlight",
+            "label": "Tytuł - Wyróżnione słowo",
+            "name": "highlight_title_highlight",
+            "type": "text",
+            "instructions": "Słowo z highlightem (np. 'Kobiety')",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_description",
+            "label": "Opis",
+            "name": "highlight_description",
+            "type": "textarea",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_icon1_image",
+            "label": "Ikona 1 - Obraz",
+            "name": "highlight_icon1_image",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_icon1_text",
+            "label": "Ikona 1 - Tekst",
+            "name": "highlight_icon1_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_icon2_image",
+            "label": "Ikona 2 - Obraz",
+            "name": "highlight_icon2_image",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_icon2_text",
+            "label": "Ikona 2 - Tekst",
+            "name": "highlight_icon2_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_icon3_image",
+            "label": "Ikona 3 - Obraz",
+            "name": "highlight_icon3_image",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_icon3_text",
+            "label": "Ikona 3 - Tekst",
+            "name": "highlight_icon3_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_icon4_image",
+            "label": "Ikona 4 - Obraz",
+            "name": "highlight_icon4_image",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_icon4_text",
+            "label": "Ikona 4 - Tekst",
+            "name": "highlight_icon4_text",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_main_image",
+            "label": "Główne zdjęcie",
+            "name": "highlight_main_image",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Zdjęcie po prawej stronie",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_background_image",
+            "label": "Zdjęcie tła",
+            "name": "highlight_background_image",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Dekoracyjne tło po lewej stronie",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_cta_text",
+            "label": "CTA - Tekst",
+            "name": "highlight_cta_text",
+            "type": "text",
+            "default_value": "Dowiedz się więcej",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_highlight_cta_link",
+            "label": "CTA - Link",
+            "name": "highlight_cta_link",
+            "type": "url",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "highlight"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_subtitle",
+            "label": "Podtytuł",
+            "name": "standard_subtitle",
+            "type": "text",
+            "instructions": "Np. 'Projekt'",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_title_before",
+            "label": "Tytuł - Przed highlightem",
+            "name": "standard_title_before",
+            "type": "text",
+            "instructions": "Tekst przed wyróżnionym słowem (opcjonalnie)",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_title_highlight",
+            "label": "Tytuł - Wyróżnione słowo",
+            "name": "standard_title_highlight",
+            "type": "text",
+            "instructions": "Słowo z highlightem",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_title_after",
+            "label": "Tytuł - Po highlighcie",
+            "name": "standard_title_after",
+            "type": "text",
+            "instructions": "Tekst po wyróżnionym słowie",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_description1",
+            "label": "Opis 1",
+            "name": "standard_description1",
+            "type": "textarea",
+            "instructions": "Pierwszy paragraf opisu",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_description2",
+            "label": "Opis 2",
+            "name": "standard_description2",
+            "type": "textarea",
+            "instructions": "Drugi paragraf opisu",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_funding",
+            "label": "Dofinansowanie",
+            "name": "standard_funding",
+            "type": "text",
+            "instructions": "Np. 'Dofinansowanie z UE: 50 000,00 zł'",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_image",
+            "label": "Zdjęcie",
+            "name": "standard_image",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_cta_text",
+            "label": "CTA - Tekst",
+            "name": "standard_cta_text",
+            "type": "text",
+            "default_value": "Dowiedz się więcej",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_standard_cta_link",
+            "label": "CTA - Link",
+            "name": "standard_cta_link",
+            "type": "url",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_realizacja_type",
+                        "operator": "==",
+                        "value": "standard"
+                    }
+                ]
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "realizacje"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Pola do zarządzania wizualizacją realizacji na stronie oferta.php"
+}
