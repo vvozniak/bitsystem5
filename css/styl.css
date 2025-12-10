@@ -1859,7 +1859,8 @@ html, body {
     border-radius: 8px;
     margin-bottom: 2vw;
 }
-.contact-detail img {
+.contact-detail img,
+.contact-detail-address img {
     width: 1.5vw;
     height: 1.5vw;
     margin-right: 1.5vw;
@@ -1968,7 +1969,8 @@ html, body {
         align-items: center;
         text-align: center;
     }
-    .contact-detail img {
+    .contact-detail img,
+    .contact-detail-address img {
         width: 6vw;
         height: 6vw;
         margin-right: 0;

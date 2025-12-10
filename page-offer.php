@@ -5,6 +5,52 @@
 ?>
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Responsywność mobilna dla sekcji Oferta */
+    @media (max-width: 1024px) {
+      .hero-content { margin-left: 10vw !important; max-width: 80vw !important; }
+      .hero-section .text-title { font-size: 5vw !important; }
+      .hero-section .text-desc { font-size: 2.8vw !important; max-width: 80vw !important; }
+      .offer-section .header-content { margin: 0 8vw 4vw !important; }
+      .section-title { font-size: 4vw !important; }
+      .section-subtitle1 { font-size: 3vw !important; }
+      .section-description { font-size: 2.6vw !important; }
+      .offer-grid { left: 0 !important; transform: none !important; padding: 0 5vw !important; }
+      .kafelek { width: calc(50% - 2vw) !important; height: auto !important; padding: 4vw !important; margin: 0 2vw 2vw 0 !important; float: left !important; }
+      .kafelek h3 { font-size: 2.8vw !important; }
+      .kafelek p { font-size: 2.4vw !important; }
+    }
+    @media (max-width: 768px) {
+      .hero-section { margin-top: 18vw !important; }
+      .hero-content { margin-left: 6vw !important; max-width: 90vw !important; }
+      .hero-section .text-title { font-size: 7vw !important; }
+      .hero-section .text-desc { font-size: 3.8vw !important; max-width: 90vw !important; }
+      .social-icons { top: auto !important; bottom: 6vw !important; right: 6vw !important; flex-direction: row !important; gap: 3vw !important; }
+      .social-icons a { width: 10vw !important; height: 10vw !important; }
+      .offer-section { padding: 8vw 0 !important; }
+      .offer-section .header-content { margin: 0 6vw 6vw !important; }
+      .section-subtitle1 { font-size: 4.5vw !important; }
+      .section-title { font-size: 5.5vw !important; }
+      .section-description { font-size: 4vw !important; line-height: 1.5 !important; }
+      .header-content { text-align: center !important; }
+      .section-title span { white-space: normal !important; display: inline-block !important; }
+      .section-subtitle1 { text-align: center !important; }
+      .offer-grid { width: 100% !important; padding: 0 6vw !important; }
+      .kafelek { width: 100% !important; height: auto !important; margin: 0 0 4vw 0 !important; padding: 6vw !important; float: none !important; display: flex !important; }
+      .kafelek img { width: 12vw !important; height: 12vw !important; margin-right: 3vw !important; }
+      .kafelek h3 { font-size: 5vw !important; }
+      .kafelek p { font-size: 4vw !important; }
+      .offer-section > div a { font-size: 4.2vw !important; padding: 3.2vw 7vw !important; }
+      .logos-strip img { max-height: 12vw !important; }
+      .approach-container { display: flex !important; flex-direction: column !important; gap: 6vw !important; }
+      .approach-left, .approach-right { width: 100% !important; }
+      .approach-left { text-align: center !important; }
+      .approach-left .text-block { margin: 0 auto !important; }
+      .approach-title { text-align: center !important; }
+      .img-large { width: 100% !important; height: auto !important; }
+      .img-small { width: 50vw !important; height: auto !important; }
+    }
+  </style>
 
 </head>
 
@@ -146,24 +192,21 @@ $hero_background = get_field('offer_hero_background_image');
     <!-- 🔹 KAFELKI (Z ACF POZOSTAJĄCE, UKŁAD LEWO-PRAWO) -->
     <div class="offer-grid" style="width:100vw;position:relative;left:50%;transform:translateX(-50%);padding:0;overflow:hidden;margin:0 auto;max-width:100%;">
         <?php
-        // Pobieranie kafelków z ACF
+        // Pobieranie kafelków z ACF z uzupełnieniem braków domyślnymi wartościami
         $cards = [];
+        $defaults = [
+            1 => ['title'=>'Konferencje i wydarzenia','description'=>'Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów.','icon'=>'webp/conference (1) 1.webp','color'=>'#000C32','width'=>'35%'],
+            2 => ['title'=>'Misje gospodarcze i naukowe','description'=>'Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą.','icon'=>'webp/economic 1.webp','color'=>'#0BA0D8','width'=>'65%'],
+            3 => ['title'=>'Wsparcie projektów badawczych','description'=>'Pomagamy w organizacji projektów naukowych i eksperckich.','icon'=>'webp/scientist 1.webp','color'=>'#000C32','width'=>'50%'],
+            4 => ['title'=>'Inicjatywy międzykulturowe','description'=>'Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne.','icon'=>'webp/culture 1.webp','color'=>'#0BA0D8','width'=>'50%'],
+            5 => ['title'=>'Rozwiązania technologiczne dla eventów','description'=>'Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną.','icon'=>'webp/economic 1 (1).webp','color'=>'#000C32','width'=>'40%'],
+            6 => ['title'=>'Eventy specjalne','description'=>'Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych.','icon'=>'webp/economic 1 (2).webp','color'=>'#0BA0D8','width'=>'60%'],
+        ];
         for ($i = 1; $i <= 6; $i++) {
-            $card = get_field('offer_card_' . $i);
-            if ($card) {
-                $cards[] = $card;
-            } else {
-                // Domyślne wartości jeśli ACF nie jest ustawiony
-                $defaults = [
-                    1 => ['title'=>'Konferencje i wydarzenia','description'=>'Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów.','icon'=>'webp/conference (1) 1.webp','color'=>'#000C32','width'=>'35%'],
-                    2 => ['title'=>'Misje gospodarcze i naukowe','description'=>'Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą.','icon'=>'webp/economic 1.webp','color'=>'#0BA0D8','width'=>'65%'],
-                    3 => ['title'=>'Wsparcie projektów badawczych','description'=>'Pomagamy w organizacji projektów naukowych i eksperckich.','icon'=>'webp/scientist 1.webp','color'=>'#000C32','width'=>'50%'],
-                    4 => ['title'=>'Inicjatywy międzykulturowe','description'=>'Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne.','icon'=>'webp/culture 1.webp','color'=>'#0BA0D8','width'=>'50%'],
-                    5 => ['title'=>'Rozwiązania technologiczne dla eventów','description'=>'Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną.','icon'=>'webp/economic 1 (1).webp','color'=>'#000C32','width'=>'40%'],
-                    6 => ['title'=>'Eventy specjalne','description'=>'Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych.','icon'=>'webp/economic 1 (2).webp','color'=>'#0BA0D8','width'=>'60%'],
-                ];
-                $cards[] = $defaults[$i];
-            }
+            $card_raw = get_field('offer_card_' . $i);
+            $card = is_array($card_raw) ? $card_raw : [];
+            // scal z domyślną tablicą, aby brakujące color/width/description nie psuły stylu
+            $cards[] = array_merge($defaults[$i], array_filter($card, static function($v) { return $v !== null && $v !== ''; }));
         }
 
         $height = '13.48vw';
