@@ -28,12 +28,21 @@ Strona "O nas" (`page-aboutus.php`) została zaktualizowana o integrację z Adva
 
 ### 3. Zespół - Osoby
 
-**Pole:**
-- `aboutus_team_members` - Repeater dla członków zespołu (maksymalnie 4 osoby)
-  - `photo` - Zdjęcie osoby (zalecane: kwadratowe, min. 500x500px)
-  - `name` - Imię i nazwisko
-  - `description` - Opis osoby
-  - `row_class` - Klasa CSS dla rzędu (opcjonalnie, automatycznie przypisywana)
+**Pola:**
+- `aboutus_member_1_photo` - Zdjęcie osoby 1 (zalecane: kwadratowe, min. 500x500px)
+- `aboutus_member_1_name` - Imię i nazwisko osoby 1 (domyślnie: "Michał Cichoracki")
+- `aboutus_member_1_description` - Opis osoby 1
+- `aboutus_member_2_photo` - Zdjęcie osoby 2 (zalecane: kwadratowe, min. 500x500px)
+- `aboutus_member_2_name` - Imię i nazwisko osoby 2 (domyślnie: "Dorota Markiewicz")
+- `aboutus_member_2_description` - Opis osoby 2
+- `aboutus_member_3_photo` - Zdjęcie osoby 3 (zalecane: kwadratowe, min. 500x500px)
+- `aboutus_member_3_name` - Imię i nazwisko osoby 3
+- `aboutus_member_3_description` - Opis osoby 3
+- `aboutus_member_4_photo` - Zdjęcie osoby 4 (zalecane: kwadratowe, min. 500x500px)
+- `aboutus_member_4_name` - Imię i nazwisko osoby 4
+- `aboutus_member_4_description` - Opis osoby 4
+
+**Uwaga:** Sekcja zespołu używa 4 statycznych zestawów pól (zamiast repeatera) dla kompatybilności z ACF Free.
 
 **Automatyczne przypisywanie klas:**
 - Osoba 1: `person-1` (zdjęcie po lewej, niebieski pasek z lewej)
@@ -43,12 +52,14 @@ Strona "O nas" (`page-aboutus.php`) została zaktualizowana o integrację z Adva
 
 **Renderowanie warunkowe:**
 - Wyświetlane są tylko osoby, które mają wypełnione pole `name` lub `photo`
-- Puste pola nie są wyświetlane na stronie
+- Puste pola nie są wyświetlane na stronie (sloty są pomijane)
 - Jeśli pole `name` jest puste ale `photo` istnieje, alt obrazu będzie "Team member"
+- Osoby nieparzyste (1, 3) mają zdjęcie po lewej stronie
+- Osoby parzyste (2, 4) mają zdjęcie po prawej stronie
 
 **Kompatybilność wsteczna:**
 - Klasy `michal-row` i `dorota-row` nadal działają dla istniejącej treści
-- Jeśli repeater jest pusty, wyświetlane są domyślne osoby:
+- Jeśli wszystkie pola są puste, wyświetlane są domyślne osoby:
   - Michał Cichoracki (`/images/webp/Component 19.webp`)
   - Dorota Markiewicz (`/images/webp/Component 20.webp`)
 
@@ -92,21 +103,21 @@ Strona "O nas" (`page-aboutus.php`) została zaktualizowana o integrację z Adva
 
 ### 3. Dodawanie członków zespołu
 
-**Limit:** Możesz dodać maksymalnie 4 osoby.
+**Dostępne sloty:** Możesz wypełnić od 0 do 4 slotów osób.
 
-1. W sekcji **Zespół - Osoby** kliknij **Dodaj osobę**
-2. Wypełnij wymagane pola:
+1. W sekcji **Zespół - Osoby** zobaczysz 4 zestawy pól (Osoba 1, Osoba 2, Osoba 3, Osoba 4)
+2. Dla każdej osoby wypełnij wymagane pola:
    - **Zdjęcie** - Prześlij zdjęcie osoby (zalecane: kwadratowe, min. 500x500px)
    - **Imię i nazwisko** - Wpisz pełne imię
    - **Opis** - Wpisz biografię i opis roli w firmie
-   - **Klasa CSS** (opcjonalnie) - Zostaw puste, klasa zostanie automatycznie przypisana
-3. Kliknij **Dodaj osobę** ponownie, aby dodać kolejną osobę (maks. 4)
+3. Możesz wypełnić tylko wybrane sloty (np. tylko Osobę 1 i 3), pozostałe zostaną pominięte
+4. Aby pominąć daną osobę, zostaw pola `name` i `photo` puste
 
 **Uwaga:** 
-- Jeśli nie wypełnisz pól `name` i `photo`, osoba nie będzie wyświetlana
+- Jeśli nie wypełnisz pól `name` i `photo`, osoba nie będzie wyświetlana (slot zostanie pominięty)
 - Osoby nieparzyste (1, 3) mają zdjęcie po lewej stronie
 - Osoby parzyste (2, 4) mają zdjęcie po prawej stronie
-- Można dodać tylko wybrane osoby (np. tylko 2 z 4), pozostałe miejsca pozostaną puste i nie będą wyświetlane
+- Osoba 1 i 2 mają domyślne wartości (Michał Cichoracki i Dorota Markiewicz), które możesz nadpisać lub zostawić
 
 ### 4. Dodawanie linków społecznościowych
 

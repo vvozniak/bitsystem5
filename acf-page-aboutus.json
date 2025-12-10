@@ -99,47 +99,100 @@
             "instructions": "Opis sekcji Kim jesteśmy"
         },
         {
-            "key": "field_aboutus_team_members",
-            "label": "Zespół - Osoby",
-            "name": "aboutus_team_members",
-            "type": "repeater",
-            "instructions": "Dodaj do 4 osób. Wypełnione pola będą wyświetlane na stronie. Puste pola nie będą wyświetlane. Osoby nieparzyste (1, 3) mają zdjęcie po lewej, osoby parzyste (2, 4) mają zdjęcie po prawej.",
-            "min": 0,
-            "max": 4,
-            "layout": "block",
-            "button_label": "Dodaj osobę",
-            "sub_fields": [
-                {
-                    "key": "field_aboutus_team_photo",
-                    "label": "Zdjęcie",
-                    "name": "photo",
-                    "type": "image",
-                    "return_format": "array",
-                    "instructions": "Zdjęcie osoby (zalecane: kwadratowe, min. 500x500px)"
-                },
-                {
-                    "key": "field_aboutus_team_name",
-                    "label": "Imię i nazwisko",
-                    "name": "name",
-                    "type": "text",
-                    "instructions": "Pełne imię i nazwisko osoby"
-                },
-                {
-                    "key": "field_aboutus_team_description",
-                    "label": "Opis",
-                    "name": "description",
-                    "type": "textarea",
-                    "instructions": "Biografia i opis roli osoby w firmie"
-                },
-                {
-                    "key": "field_aboutus_team_row_class",
-                    "label": "Klasa CSS dla rzędu (opcjonalnie)",
-                    "name": "row_class",
-                    "type": "text",
-                    "default_value": "",
-                    "instructions": "Zaawansowane: Dodatkowa klasa CSS dla customizacji. Zostaw puste, jeśli nie jesteś pewien."
-                }
-            ]
+            "key": "field_aboutus_member_1_photo",
+            "label": "Osoba 1 - Zdjęcie",
+            "name": "aboutus_member_1_photo",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Zdjęcie osoby (zalecane: kwadratowe, min. 500x500px). Jeśli puste, użyte zostanie domyślne zdjęcie Michała Cichorackiego."
+        },
+        {
+            "key": "field_aboutus_member_1_name",
+            "label": "Osoba 1 - Imię i nazwisko",
+            "name": "aboutus_member_1_name",
+            "type": "text",
+            "default_value": "Michał Cichoracki",
+            "instructions": "Pełne imię i nazwisko osoby. Zostaw puste, aby pominąć tę osobę."
+        },
+        {
+            "key": "field_aboutus_member_1_description",
+            "label": "Osoba 1 - Opis",
+            "name": "aboutus_member_1_description",
+            "type": "textarea",
+            "default_value": "Współzałożyciel Bit System Sp. z o.o., ekspert w zakresie organizacji wydarzeń międzynarodowych, misji gospodarczych i projektów badawczych. Posiada bogate doświadczenie w pracy z instytucjami publicznymi, uczelniami oraz organizacjami międzynarodowymi. Zajmuje się strategicznym planowaniem, koordynacją projektów oraz budowaniem partnerstw międzysektorowych. Ceniony za profesjonalizm, umiejętność pracy w złożonym środowisku i skuteczne łączenie różnych perspektyw.",
+            "instructions": "Biografia i opis roli osoby w firmie."
+        },
+        {
+            "key": "field_aboutus_member_2_photo",
+            "label": "Osoba 2 - Zdjęcie",
+            "name": "aboutus_member_2_photo",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Zdjęcie osoby (zalecane: kwadratowe, min. 500x500px). Jeśli puste, użyte zostanie domyślne zdjęcie Doroty Markiewicz."
+        },
+        {
+            "key": "field_aboutus_member_2_name",
+            "label": "Osoba 2 - Imię i nazwisko",
+            "name": "aboutus_member_2_name",
+            "type": "text",
+            "default_value": "Dorota Markiewicz",
+            "instructions": "Pełne imię i nazwisko osoby. Zostaw puste, aby pominąć tę osobę."
+        },
+        {
+            "key": "field_aboutus_member_2_description",
+            "label": "Osoba 2 - Opis",
+            "name": "aboutus_member_2_description",
+            "type": "textarea",
+            "default_value": "Współzałożycielka Bit System Sp. z o.o., specjalistka w obszarze współpracy międzykulturowej, komunikacji i edukacji międzynarodowej. Przez lata angażowała się w projekty społeczne, kulturalne i naukowe o zasięgu krajowym i europejskim. W Bit System odpowiadała za rozwój koncepcji programowych, współpracę z ośrodkami naukowymi oraz realizację projektów wspierających dialog i integrację. Znana z zaangażowania, kreatywności i podejścia opartego na empatii i partnerstwie.",
+            "instructions": "Biografia i opis roli osoby w firmie."
+        },
+        {
+            "key": "field_aboutus_member_3_photo",
+            "label": "Osoba 3 - Zdjęcie",
+            "name": "aboutus_member_3_photo",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Zdjęcie osoby (zalecane: kwadratowe, min. 500x500px)."
+        },
+        {
+            "key": "field_aboutus_member_3_name",
+            "label": "Osoba 3 - Imię i nazwisko",
+            "name": "aboutus_member_3_name",
+            "type": "text",
+            "default_value": "",
+            "instructions": "Pełne imię i nazwisko osoby. Zostaw puste, aby pominąć tę osobę."
+        },
+        {
+            "key": "field_aboutus_member_3_description",
+            "label": "Osoba 3 - Opis",
+            "name": "aboutus_member_3_description",
+            "type": "textarea",
+            "default_value": "",
+            "instructions": "Biografia i opis roli osoby w firmie."
+        },
+        {
+            "key": "field_aboutus_member_4_photo",
+            "label": "Osoba 4 - Zdjęcie",
+            "name": "aboutus_member_4_photo",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Zdjęcie osoby (zalecane: kwadratowe, min. 500x500px)."
+        },
+        {
+            "key": "field_aboutus_member_4_name",
+            "label": "Osoba 4 - Imię i nazwisko",
+            "name": "aboutus_member_4_name",
+            "type": "text",
+            "default_value": "",
+            "instructions": "Pełne imię i nazwisko osoby. Zostaw puste, aby pominąć tę osobę."
+        },
+        {
+            "key": "field_aboutus_member_4_description",
+            "label": "Osoba 4 - Opis",
+            "name": "aboutus_member_4_description",
+            "type": "textarea",
+            "default_value": "",
+            "instructions": "Biografia i opis roli osoby w firmie."
         },
         {
             "key": "field_aboutus_what_subtitle",

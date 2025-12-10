@@ -104,7 +104,50 @@ $kim_title = get_field('aboutus_kim_title') ?: 'Kim jesteśmy';
 $kim_subtitle_before = get_field('aboutus_kim_subtitle_before') ?: 'Poznaj naszą ';
 $kim_subtitle_highlight = get_field('aboutus_kim_subtitle_highlight') ?: 'misję';
 $kim_description = get_field('aboutus_kim_description') ?: 'Bit System Sp. z o.o. to firma specjalizująca się w kompleksowej obsłudze wydarzeń na styku kultur, technologii i współpracy międzynarodowej. Wspieramy organizację konferencji, misji gospodarczych, projektów badawczych oraz działań międzykulturowych, tworząc przestrzeń do wymiany wiedzy, doświadczeń i innowacji.';
-$team_members = get_field('aboutus_team_members');
+
+// Build array of 4 team member slots with default values
+$default_members = [
+    1 => [
+        'photo' => ['url' => get_template_directory_uri() . '/images/webp/Component 19.webp', 'alt' => 'Michał Cichoracki'],
+        'name' => 'Michał Cichoracki',
+        'description' => 'Współzałożyciel Bit System Sp. z o.o., ekspert w zakresie organizacji wydarzeń międzynarodowych, misji gospodarczych i projektów badawczych. Posiada bogate doświadczenie w pracy z instytucjami publicznymi, uczelniami oraz organizacjami międzynarodowymi. Zajmuje się strategicznym planowaniem, koordynacją projektów oraz budowaniem partnerstw międzysektorowych. Ceniony za profesjonalizm, umiejętność pracy w złożonym środowisku i skuteczne łączenie różnych perspektyw.'
+    ],
+    2 => [
+        'photo' => ['url' => get_template_directory_uri() . '/images/webp/Component 20.webp', 'alt' => 'Dorota Markiewicz'],
+        'name' => 'Dorota Markiewicz',
+        'description' => 'Współzałożycielka Bit System Sp. z o.o., specjalistka w obszarze współpracy międzykulturowej, komunikacji i edukacji międzynarodowej. Przez lata angażowała się w projekty społeczne, kulturalne i naukowe o zasięgu krajowym i europejskim. W Bit System odpowiadała za rozwój koncepcji programowych, współpracę z ośrodkami naukowymi oraz realizację projektów wspierających dialog i integrację. Znana z zaangażowania, kreatywności i podejścia opartego na empatii i partnerstwie.'
+    ],
+    3 => [
+        'photo' => null,
+        'name' => '',
+        'description' => ''
+    ],
+    4 => [
+        'photo' => null,
+        'name' => '',
+        'description' => ''
+    ]
+];
+
+// Fetch and merge ACF values with defaults
+$team_members = [];
+for ($i = 1; $i <= 4; $i++) {
+    $photo = get_field("aboutus_member_{$i}_photo");
+    $name = get_field("aboutus_member_{$i}_name");
+    $description = get_field("aboutus_member_{$i}_description");
+    
+    // Merge with defaults
+    $member = [
+        'photo' => $photo ?: $default_members[$i]['photo'],
+        'name' => $name ?: $default_members[$i]['name'],
+        'description' => $description ?: $default_members[$i]['description']
+    ];
+    
+    // Only add if name or photo exists
+    if (!empty($member['name']) || !empty($member['photo'])) {
+        $team_members[$i] = $member;
+    }
+}
 ?>
 
 <section class="kim-jestesmy">
@@ -122,32 +165,25 @@ $team_members = get_field('aboutus_team_members');
 
     </div>
     <div class="kj-dol">
-        <?php if ($team_members && count($team_members) > 0) : ?>
+        <?php if (!empty($team_members)) : ?>
             <?php 
-            $index = 0;
-            $max_team_members = 4;
-            $default_classes = ['person-1', 'person-2', 'person-3', 'person-4'];
-            foreach ($team_members as $member) : 
-                // Only display if member has at least a name or photo
-                if (empty($member['name']) && empty($member['photo'])) {
-                    continue;
-                }
+            $default_classes = [1 => 'person-1', 2 => 'person-2', 3 => 'person-3', 4 => 'person-4'];
+            $fallback_classes = [1 => 'michal-row', 2 => 'dorota-row', 3 => 'person-3', 4 => 'person-4'];
+            
+            foreach ($team_members as $index => $member) : 
+                // Calculate class based on index: odd (1,3) left, even (2,4) right
+                $person_class = $default_classes[$index];
                 
-                $index++;
-                // Stop displaying after max team members
-                if ($index > $max_team_members) {
-                    break;
+                // Use fallback class for default members (1=Michał, 2=Dorota)
+                if ($index <= 2 && $member['name'] === $default_members[$index]['name']) {
+                    $person_class .= ' ' . $fallback_classes[$index];
                 }
-                
-                // Auto-assign class based on index if no custom class is provided
-                $class_index = min($index - 1, count($default_classes) - 1);
-                $person_class = !empty($member['row_class']) ? $member['row_class'] : $default_classes[$class_index];
             ?>
                 <div class="person-row <?php echo esc_attr($person_class); ?>">
                     <?php if ($member['photo']) : ?>
                         <img 
                             src="<?php echo esc_url($member['photo']['url']); ?>"
-                            alt="<?php echo esc_attr($member['name'] ?: 'Team member'); ?>" 
+                            alt="<?php echo esc_attr($member['photo']['alt'] ?: ($member['name'] ?: 'Team member')); ?>" 
                             class="person-image"
                         >
                     <?php endif; ?>
