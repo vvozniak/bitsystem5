@@ -140,13 +140,14 @@ $team_members = get_field('aboutus_team_members');
                 }
                 
                 // Auto-assign class based on index if no custom class is provided
-                $person_class = !empty($member['row_class']) ? $member['row_class'] : $default_classes[$index - 1];
+                $class_index = min($index - 1, count($default_classes) - 1);
+                $person_class = !empty($member['row_class']) ? $member['row_class'] : $default_classes[$class_index];
             ?>
                 <div class="person-row <?php echo esc_attr($person_class); ?>">
                     <?php if ($member['photo']) : ?>
                         <img 
                             src="<?php echo esc_url($member['photo']['url']); ?>"
-                            alt="<?php echo esc_attr($member['name']); ?>" 
+                            alt="<?php echo esc_attr($member['name'] ?: 'Team member'); ?>" 
                             class="person-image"
                         >
                     <?php endif; ?>
