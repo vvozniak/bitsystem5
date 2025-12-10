@@ -122,6 +122,14 @@
                     "name": "width",
                     "type": "text",
                     "default_value": "35%"
+                },
+                {
+                    "key": "field_offer_card_1_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "default_value": "",
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
                 }
             ]
         },
@@ -165,6 +173,14 @@
                     "name": "width",
                     "type": "text",
                     "default_value": "65%"
+                },
+                {
+                    "key": "field_offer_card_2_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "default_value": "",
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
                 }
             ]
         },
@@ -208,6 +224,14 @@
                     "name": "width",
                     "type": "text",
                     "default_value": "50%"
+                },
+                {
+                    "key": "field_offer_card_3_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "default_value": "",
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
                 }
             ]
         },
@@ -251,6 +275,14 @@
                     "name": "width",
                     "type": "text",
                     "default_value": "50%"
+                },
+                {
+                    "key": "field_offer_card_4_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "default_value": "",
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
                 }
             ]
         },
@@ -294,6 +326,14 @@
                     "name": "width",
                     "type": "text",
                     "default_value": "40%"
+                },
+                {
+                    "key": "field_offer_card_5_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "default_value": "",
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
                 }
             ]
         },
@@ -337,6 +377,14 @@
                     "name": "width",
                     "type": "text",
                     "default_value": "60%"
+                },
+                {
+                    "key": "field_offer_card_6_link",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "default_value": "",
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
                 }
             ]
         },

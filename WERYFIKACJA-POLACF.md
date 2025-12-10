@@ -23,6 +23,7 @@
   - `icon` ✅
   - `color` ✅
   - `width` ✅
+  - `link` ✅
 - `offer_card_2` do `offer_card_6` (analogicznie) ✅
 
 ### Sekcja Approach (wszystkie pola obecne ✅)

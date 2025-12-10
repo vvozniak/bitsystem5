@@ -60,6 +60,7 @@ Każdy kafelek (`offer_card_1` do `offer_card_6`) zawiera:
 - `icon` - Ikona (obrazek)
 - `color` - Kolor tła (hex)
 - `width` - Szerokość (np. "35%", "65%")
+- `link` - Link do podstrony (opcjonalny, domyślnie: /oferta)
 
 #### Sekcja "Nasze podejście":
 - `offer_approach_subtitle` - Podtytuł
