@@ -149,11 +149,11 @@ for ($i = 1; $i <= 4; $i++) {
         'is_default' => !$has_photo && !$has_name  // Default when both name and photo are empty
     ];
     
-    // Only add if name or photo exists (reuse existing checks)
-    $has_valid_photo = !empty($member['photo']) && !empty($member['photo']['url']);
-    $has_valid_name = !empty($member['name']);
+    // Only add if final member has valid name or photo (after defaults applied)
+    $member_has_valid_photo = !empty($member['photo']) && !empty($member['photo']['url']);
+    $member_has_valid_name = !empty($member['name']);
     
-    if ($has_valid_name || $has_valid_photo) {
+    if ($member_has_valid_name || $member_has_valid_photo) {
         $team_members[$i] = $member;
     }
 }
