@@ -139,16 +139,17 @@ for ($i = 1; $i <= 4; $i++) {
     // Check if ACF field has actual value (not empty string or false)
     $has_photo = !empty($photo) && !empty($photo['url']);
     $has_name = !empty($name);
+    $has_description = !empty($description);
     
     // Merge with defaults only if ACF field is empty
     $member = [
         'photo' => $has_photo ? $photo : $default_members[$i]['photo'],
         'name' => $has_name ? $name : $default_members[$i]['name'],
-        'description' => !empty($description) ? $description : $default_members[$i]['description'],
-        'is_default' => !$has_photo && !$has_name  // Track if using defaults
+        'description' => $has_description ? $description : $default_members[$i]['description'],
+        'is_default' => !$has_photo && !$has_name  // Default when both name and photo are empty
     ];
     
-    // Only add if name or photo exists (check actual values, not empty arrays)
+    // Only add if name or photo exists (reuse existing checks)
     $has_valid_photo = !empty($member['photo']) && !empty($member['photo']['url']);
     $has_valid_name = !empty($member['name']);
     
@@ -183,7 +184,7 @@ for ($i = 1; $i <= 4; $i++) {
                 $person_class = $default_classes[$index];
                 
                 // Use fallback class for default members (1=Michał, 2=Dorota) only if using defaults
-                if ($index <= 2 && !empty($member['is_default'])) {
+                if ($index <= 2 && $member['is_default'] === true) {
                     $person_class .= ' ' . $fallback_classes[$index];
                 }
             ?>
