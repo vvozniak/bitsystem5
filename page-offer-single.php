@@ -68,13 +68,7 @@ get_header();
         
         <!-- Przycisk CTA -->
         <div style="text-align:center; margin-top:4vw; margin-bottom:2vw;">
-          <a href="<?php echo esc_url($cta_link); ?>" 
-             style="display:inline-block; background-color:#0BA0D8; color:white; padding:1.2vw 3vw; 
-                    font-family:'Manrope', sans-serif; font-size:1.1vw; font-weight:600; 
-                    text-decoration:none; border-radius:50px; transition:all 0.3s ease; 
-                    box-shadow:0 4px 10px rgba(11,160,216,0.3);"
-             onmouseover="this.style.backgroundColor='#0888ba'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 15px rgba(11,160,216,0.4)';"
-             onmouseout="this.style.backgroundColor='#0BA0D8'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(11,160,216,0.3)';">
+          <a href="<?php echo esc_url($cta_link); ?>" class="cta-button">
             <?php echo esc_html($cta_text); ?>
           </a>
         </div>
@@ -86,8 +80,30 @@ get_header();
   </div>
 </div>
 
-<!-- Style dla treści Gutenberga -->
+<!-- Styles -->
 <style>
+/* CTA button styles */
+.cta-button {
+    display: inline-block;
+    background-color: #0BA0D8;
+    color: white;
+    padding: 1.2vw 3vw;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1vw;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(11, 160, 216, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #0888ba;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(11, 160, 216, 0.4);
+}
+
+/* Gutenberg content styles */
 .entry-content h2 {
     font-family: 'Manrope', sans-serif;
     font-size: clamp(1.5rem, 2vw, 2rem);
@@ -187,7 +203,7 @@ get_header();
         font-size: 3.5vw !important;
     }
     
-    .entry-content a[href^="#"] {
+    .cta-button {
         font-size: 3.5vw !important;
         padding: 3vw 6vw !important;
     }
