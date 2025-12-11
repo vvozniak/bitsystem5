@@ -1,0 +1,76 @@
+{
+    "key": "group_backgrounds",
+    "title": "Tła Stron",
+    "fields": [
+        {
+            "key": "field_lista_realizacji_tlo",
+            "label": "Tło - Lista Realizacji",
+            "name": "lista_realizacji_tlo",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Tło dla strony listy realizacji. Jeśli puste, użyje domyślnego tlo.webp"
+        },
+        {
+            "key": "field_lista_bloga_tlo",
+            "label": "Tło - Lista Bloga",
+            "name": "lista_bloga_tlo",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Tło dla strony listy bloga. Jeśli puste, użyje domyślnego tlo.webp"
+        },
+        {
+            "key": "field_pojedyncza_realizacja_tlo",
+            "label": "Tło - Pojedyncza Realizacja",
+            "name": "pojedyncza_realizacja_tlo",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Tło dla pojedynczej realizacji. Jeśli puste, użyje domyślnego tlo3.webp"
+        },
+        {
+            "key": "field_pojedynczy_post_tlo",
+            "label": "Tło - Pojedynczy Post",
+            "name": "pojedynczy_post_tlo",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Tło dla pojedynczego posta. Jeśli puste, użyje domyślnego tlo3.webp"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-realization.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-blog.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "realizacje"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Pola ACF dla customizacji tła stron i postów"
+}

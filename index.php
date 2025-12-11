@@ -528,40 +528,50 @@ function get_card_icon_url($card) {
       </p>
     </div>
     
-    <?php if ($card_1) : ?>
-    <a href="/oferta" class="offer-card dark-bg card-1" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <?php if ($card_1) : 
+      $card_1_link = !empty($card_1['link']) ? esc_url($card_1['link']) : '/oferta';
+    ?>
+    <a href="<?php echo $card_1_link; ?>" class="offer-card dark-bg card-1" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_1); ?>' alt="<?php echo esc_attr($card_1['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_1['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_1['text']); ?></p>
     </a>
     <?php endif; ?>
 
-    <?php if ($card_2) : ?>
-    <a href="/oferta" class="offer-card dark-bg card-2" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <?php if ($card_2) : 
+      $card_2_link = !empty($card_2['link']) ? esc_url($card_2['link']) : '/oferta';
+    ?>
+    <a href="<?php echo $card_2_link; ?>" class="offer-card dark-bg card-2" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_2); ?>' alt="<?php echo esc_attr($card_2['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_2['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_2['text']); ?></p>
     </a>
     <?php endif; ?>
     
-    <?php if ($card_3) : ?>
-    <a href="/oferta" class="offer-card dark-bg card-3" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <?php if ($card_3) : 
+      $card_3_link = !empty($card_3['link']) ? esc_url($card_3['link']) : '/oferta';
+    ?>
+    <a href="<?php echo $card_3_link; ?>" class="offer-card dark-bg card-3" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_3); ?>' alt="<?php echo esc_attr($card_3['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_3['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_3['text']); ?></p>
     </a>
     <?php endif; ?>
     
-    <?php if ($card_4) : ?>
-    <a href="/oferta" class="offer-card dark-bg card-4" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <?php if ($card_4) : 
+      $card_4_link = !empty($card_4['link']) ? esc_url($card_4['link']) : '/oferta';
+    ?>
+    <a href="<?php echo $card_4_link; ?>" class="offer-card dark-bg card-4" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_4); ?>' alt="<?php echo esc_attr($card_4['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_4['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_4['text']); ?></p>
     </a>
     <?php endif; ?>
 
-    <?php if ($card_5) : ?>
-    <a href="/oferta" class="offer-card light-bg card-5" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <?php if ($card_5) : 
+      $card_5_link = !empty($card_5['link']) ? esc_url($card_5['link']) : '/oferta';
+    ?>
+    <a href="<?php echo $card_5_link; ?>" class="offer-card light-bg card-5" style="text-decoration: none; color: white; display: block; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
       <div class="card-icon"><img src='<?php echo get_card_icon_url($card_5); ?>' alt="<?php echo esc_attr($card_5['title']); ?>"></div> 
       <h3 class="card-title"><?php echo esc_html($card_5['title']); ?></h3>
       <p class="card-text"><?php echo esc_html($card_5['text']); ?></p>

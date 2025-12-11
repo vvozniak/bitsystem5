@@ -8,8 +8,13 @@ $pageTitle = "Oferta";
 ?>
 <?php get_header(); ?>
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:9.01vw;">
+  <?php 
+  // ACF: Tło strony z fallbackiem
+  $hero_bg = get_field('lista_realizacji_tlo');
+  $bg_url = $hero_bg ? esc_url($hero_bg['url']) : get_template_directory_uri() . '/images/webp/tlo.webp';
+  ?>
   <img 
-    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo.webp" 
+    src="<?php echo $bg_url; ?>" 
     alt="Tło wydarzenia" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >
