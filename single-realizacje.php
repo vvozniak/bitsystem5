@@ -9,13 +9,8 @@ get_header();
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:-40px;">
 
   <!-- Stałe tło -->
-  <?php 
-  // ACF: Tło pojedynczej realizacji z fallbackiem
-  $hero_bg = get_field('pojedyncza_realizacja_tlo');
-  $bg_url = $hero_bg ? esc_url($hero_bg['url']) : get_template_directory_uri() . '/images/webp/tlo3.webp';
-  ?>
   <img 
-    src="<?php echo $bg_url; ?>" 
+    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo3.webp" 
     alt="Tło realizacji" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >

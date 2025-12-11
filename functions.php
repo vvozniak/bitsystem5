@@ -231,38 +231,4 @@ function cpt_loga_klientow_init() {
 }
 add_action('init', 'cpt_loga_klientow_init');
 
-// ============================
-// Custom Post Type: Oferty
-// ============================
-function cpt_oferty_init() {
-    $labels = [
-        'name'               => 'Oferty',
-        'singular_name'      => 'Oferta',
-        'menu_name'          => 'Oferty',
-        'name_admin_bar'     => 'Oferta',
-        'add_new'            => 'Dodaj nową',
-        'add_new_item'       => 'Dodaj nową ofertę',
-        'edit_item'          => 'Edytuj ofertę',
-        'new_item'           => 'Nowa oferta',
-        'view_item'          => 'Zobacz ofertę',
-        'search_items'       => 'Szukaj ofert',
-        'not_found'          => 'Nie znaleziono ofert',
-        'not_found_in_trash' => 'Brak ofert w koszu',
-    ];
-
-    $args = [
-        'labels'             => $labels,
-        'public'             => true,
-        'has_archive'        => true,
-        'rewrite'            => ['slug' => 'oferty'],
-        'show_in_rest'       => true,
-        'menu_position'      => 7,
-        'menu_icon'          => 'dashicons-awards',
-        'supports'           => ['title', 'editor', 'thumbnail'],
-    ];
-
-    register_post_type('oferty', $args);
-}
-add_action('init', 'cpt_oferty_init');
-
 ?>
