@@ -636,23 +636,23 @@ $scrolling_logos = array_merge($logos, $logos);
             // Pętla przechodzi przez podwojoną listę logotypów
             foreach ($scrolling_logos as $logo) : 
             ?>
-                <div class="logo-item">
-                    <?php if (!empty($logo['link'])) : ?>
-                    <a href="<?php echo esc_url($logo['link']); ?>" target="_blank" rel="noopener">
-                        <img 
-                            src="<?php echo esc_url($logo['url']); ?>" 
-                            alt="<?php echo esc_attr($logo['alt']); ?>" 
-                            style="height: 100%; object-fit: contain;" 
-                        >
-                    </a>
-                    <?php else : ?>
+                <?php if (!empty($logo['link'])) : ?>
+                <a href="<?php echo esc_url($logo['link']); ?>" target="_blank" rel="noopener">
                     <img 
                         src="<?php echo esc_url($logo['url']); ?>" 
                         alt="<?php echo esc_attr($logo['alt']); ?>" 
-                        style="height: 100%; object-fit: contain;" 
+                        class="logo-item" 
+                        style="height: auto; max-height: 5vw;"
                     >
-                    <?php endif; ?>
-                </div>
+                </a>
+                <?php else : ?>
+                <img 
+                    src="<?php echo esc_url($logo['url']); ?>" 
+                    alt="<?php echo esc_attr($logo['alt']); ?>" 
+                    class="logo-item" 
+                    style="height: auto; max-height: 5vw;"
+                >
+                <?php endif; ?>
             <?php endforeach; ?>
             
         </div>

@@ -13,7 +13,7 @@
 
 <?php do_action('tailpress_site_before'); ?>
 
-<<header class="site-header">
+<header class="site-header">
   <div class="container-header">
     <nav class="nav-main">
       <div class="nav-inner">
@@ -65,7 +65,7 @@
     </nav>
   </div>
 </header>
-1:10
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const toggle = document.querySelector('.menu-toggle');
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let hoverTimeout = null;
     
     if (link && submenu) {
-      // Desktop: hover z opóźnieniem przy zamykaniu
+      // Desktop TYLKO: hover z opóźnieniem przy zamykaniu
       item.addEventListener('mouseenter', function() {
         if (window.innerWidth > 768) {
           // Anuluj timeout zamykania jeśli istnieje
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       
-      // Obsługa hover na submenu - utrzymaj otwarte
+      // Desktop TYLKO: Obsługa hover na submenu - utrzymaj otwarte
       submenu.addEventListener('mouseenter', function() {
         if (window.innerWidth > 768) {
           if (hoverTimeout) {
@@ -130,16 +130,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       
+      // Desktop TYLKO: Zamykanie przy opuszczeniu parent item
       item.addEventListener('mouseleave', function() {
         if (window.innerWidth > 768) {
           // Opóźnienie zamykania - daje czas na przejście myszy do submenu
           hoverTimeout = setTimeout(function() {
             submenu.style.display = 'none';
-          }, 200); // 200ms opóźnienia
+          }, 200);
         }
       });
       
-      // Zamykanie przy opuszczeniu submenu
+      // Desktop TYLKO: Zamykanie przy opuszczeniu submenu
       submenu.addEventListener('mouseleave', function() {
         if (window.innerWidth > 768) {
           hoverTimeout = setTimeout(function() {
@@ -148,17 +149,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       
-      // Mobile/Desktop: click
+      // Klik — działa na mobile i desktop
       link.addEventListener('click', function(e) {
-        if (submenu) {
+        // Na mobile (<= 768px) zawsze preventDefault
+        // Na desktop tylko jeśli submenu istnieje
+        if (window.innerWidth <= 768 || submenu) {
           e.preventDefault();
+          
           const isOpen = submenu.style.display === 'block';
-          // Close all other submenus
+          
+          // Zamknij wszystkie inne submenu
           document.querySelectorAll('.submenu').forEach(sub => {
             if (sub !== submenu) {
               sub.style.display = 'none';
             }
           });
+          
+          // Toggle obecne submenu
           submenu.style.display = isOpen ? 'none' : 'block';
         }
       });

@@ -591,6 +591,10 @@ video {
     visibility: visible;
 }
 
+.collapse {
+    visibility: collapse;
+}
+
 .static {
     position: static;
 }
@@ -653,6 +657,10 @@ video {
     display: flex;
 }
 
+.table {
+    display: table;
+}
+
 .grid {
     display: grid;
 }
@@ -687,6 +695,10 @@ video {
 
 .flex-grow {
     flex-grow: 1;
+}
+
+.border-collapse {
+    border-collapse: collapse;
 }
 
 .transform {
@@ -773,6 +785,10 @@ video {
 
 .font-light {
     font-weight: 300;
+}
+
+.italic {
+    font-style: italic;
 }
 
 .leading-tight {
