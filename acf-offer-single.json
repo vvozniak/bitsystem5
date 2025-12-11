@@ -1,0 +1,82 @@
+{
+    "key": "group_offer_single_template",
+    "title": "Pojedyncza Oferta",
+    "fields": [
+        {
+            "key": "field_offer_single_background",
+            "label": "Tło hero section",
+            "name": "offer_single_background",
+            "type": "image",
+            "instructions": "Opcjonalne: własne zdjęcie w tle sekcji hero. Jeśli nie zostanie wybrane, użyte będzie domyślne tło motywu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_offer_single_cta_text",
+            "label": "Tekst przycisku CTA",
+            "name": "offer_single_cta_text",
+            "type": "text",
+            "instructions": "Opcjonalne: tekst wyświetlany na przycisku CTA na dole strony. Domyślnie: \"Skontaktuj się z nami\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Skontaktuj się z nami",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_offer_single_cta_link",
+            "label": "Link przycisku CTA",
+            "name": "offer_single_cta_link",
+            "type": "url",
+            "instructions": "Opcjonalne: adres URL do którego prowadzi przycisk CTA. Domyślnie: strona kontaktowa (/kontakt)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "/kontakt"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-offer-single.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Pola dla szablonu Pojedyncza Oferta - wszystkie są opcjonalne i mają wartości domyślne."
+}
