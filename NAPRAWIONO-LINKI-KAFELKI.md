@@ -204,7 +204,7 @@ echo '<a href="'.esc_url($card_link).'" class="kafelek" ...>
 
 ---
 
-**Data:** 2025-12-12  
+**Data:** 2024-12-12  
 **Problem:** Linki w kafelkach oferty nie działają  
 **Rozwiązanie:**  
 1. ✅ Naprawiono kod w `index.php` - teraz używa pól ACF zamiast hardcoded linków

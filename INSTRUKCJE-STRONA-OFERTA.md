@@ -177,6 +177,6 @@ Krótko:
 ---
 
 **Data:** 2024-12-10  
-**Aktualizacja:** 2025-12-12 (dodano rozwiązanie problemu z linkami)
+**Aktualizacja:** 2024-12-12 (dodano rozwiązanie problemu z linkami)
 **Wersja:** 1.1  
 **Zgodność:** WordPress 5.0+, ACF 5.0+
