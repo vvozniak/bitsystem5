@@ -1,0 +1,473 @@
+{
+  "key": "group_page_offer",
+  "title": "Strona Oferty",
+  "fields": [
+    {
+      "key": "field_offer_hero_title_highlight",
+      "label": "Hero - Tytuł wyróżniony",
+      "name": "offer_hero_title_highlight",
+      "type": "text",
+      "default_value": "Doświadczenia",
+      "instructions": "Słowo z highlightem w tytule hero"
+    },
+    {
+      "key": "field_offer_hero_title_rest",
+      "label": "Hero - Reszta tytułu",
+      "name": "offer_hero_title_rest",
+      "type": "text",
+      "default_value": ", które łączą świat",
+      "instructions": "Tekst po wyróżnionym słowie"
+    },
+    {
+      "key": "field_offer_hero_description",
+      "label": "Hero - Opis",
+      "name": "offer_hero_description",
+      "type": "textarea",
+      "default_value": "Łączymy doświadczenie organizacyjne z pasją do współpracy międzykulturowej, oferując kompleksową obsługę projektów o zasięgu globalnym.",
+      "instructions": "Opis w sekcji hero"
+    },
+    {
+      "key": "field_offer_hero_background_image",
+      "label": "Hero - Tło",
+      "name": "offer_hero_background_image",
+      "type": "image",
+      "return_format": "array",
+      "instructions": "Obraz tła dla sekcji hero"
+    },
+    {
+      "key": "field_offer_section_subtitle",
+      "label": "Oferta - Podtytuł",
+      "name": "offer_section_subtitle",
+      "type": "text",
+      "default_value": "Nasza oferta",
+      "instructions": "Podtytuł sekcji oferty"
+    },
+    {
+      "key": "field_offer_section_title_before",
+      "label": "Oferta - Tytuł przed highlightem",
+      "name": "offer_section_title_before",
+      "type": "text",
+      "default_value": "Wydarzenia bez granic –",
+      "instructions": "Tekst tytułu przed wyróżnieniem"
+    },
+    {
+      "key": "field_offer_section_title_highlight",
+      "label": "Oferta - Tytuł wyróżniony",
+      "name": "offer_section_title_highlight",
+      "type": "text",
+      "default_value": "łączymy ludzi, idee i kultury",
+      "instructions": "Wyróżniona część tytułu"
+    },
+    {
+      "key": "field_offer_section_description",
+      "label": "Oferta - Opis",
+      "name": "offer_section_description",
+      "type": "textarea",
+      "default_value": "Działamy na styku biznesu, nauki i kultury. Organizujemy wydarzenia, które łączą ludzi, wiedzę i technologie, wspierając rozwój współpracy ponad granicami. Sprawdź, czym się zajmujemy:",
+      "instructions": "Opis sekcji oferty"
+    },
+    {
+      "key": "field_offer_cta_text",
+      "label": "Oferta - CTA tekst",
+      "name": "offer_cta_text",
+      "type": "text",
+      "default_value": "Zobacz nasze realizacje",
+      "instructions": "Tekst przycisku CTA"
+    },
+    {
+      "key": "field_offer_cta_link",
+      "label": "Oferta - CTA link",
+      "name": "offer_cta_link",
+      "type": "url",
+      "default_value": "#realizacje",
+      "instructions": "Link przycisku CTA"
+    },
+    {
+      "key": "field_offer_card_1",
+      "label": "Kafelek 1",
+      "name": "offer_card_1",
+      "type": "group",
+      "sub_fields": [
+        {
+          "key": "field_offer_card_1_title",
+          "label": "Tytuł",
+          "name": "title",
+          "type": "text",
+          "default_value": "Konferencje i wydarzenia"
+        },
+        {
+          "key": "field_offer_card_1_description",
+          "label": "Opis",
+          "name": "description",
+          "type": "textarea",
+          "default_value": "Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów."
+        },
+        {
+          "key": "field_offer_card_1_icon",
+          "label": "Ikona",
+          "name": "icon",
+          "type": "image",
+          "return_format": "array"
+        },
+        {
+          "key": "field_offer_card_1_color",
+          "label": "Kolor tła",
+          "name": "color",
+          "type": "color_picker",
+          "default_value": "#000C32"
+        },
+        {
+          "key": "field_offer_card_1_width",
+          "label": "Szerokość",
+          "name": "width",
+          "type": "text",
+          "default_value": "35%"
+        },
+        {
+          "key": "field_offer_card_1_tile_url",
+          "label": "URL Kafelka",
+          "name": "tile_url_card",
+          "type": "text",
+          "default_value": "",
+          "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+        }
+      ]
+    },
+    {
+      "key": "field_offer_card_2",
+      "label": "Kafelek 2",
+      "name": "offer_card_2",
+      "type": "group",
+      "sub_fields": [
+        {
+          "key": "field_offer_card_2_title",
+          "label": "Tytuł",
+          "name": "title",
+          "type": "text",
+          "default_value": "Misje gospodarcze i naukowe"
+        },
+        {
+          "key": "field_offer_card_2_description",
+          "label": "Opis",
+          "name": "description",
+          "type": "textarea",
+          "default_value": "Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą."
+        },
+        {
+          "key": "field_offer_card_2_icon",
+          "label": "Ikona",
+          "name": "icon",
+          "type": "image",
+          "return_format": "array"
+        },
+        {
+          "key": "field_offer_card_2_color",
+          "label": "Kolor tła",
+          "name": "color",
+          "type": "color_picker",
+          "default_value": "#0BA0D8"
+        },
+        {
+          "key": "field_offer_card_2_width",
+          "label": "Szerokość",
+          "name": "width",
+          "type": "text",
+          "default_value": "65%"
+        },
+        {
+          "key": "field_offer_card_2_tile_url",
+          "label": "URL Kafelka",
+          "name": "tile_url_card",
+          "type": "text",
+          "default_value": "",
+          "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+        }
+      ]
+    },
+    {
+      "key": "field_offer_card_3",
+      "label": "Kafelek 3",
+      "name": "offer_card_3",
+      "type": "group",
+      "sub_fields": [
+        {
+          "key": "field_offer_card_3_title",
+          "label": "Tytuł",
+          "name": "title",
+          "type": "text",
+          "default_value": "Wsparcie projektów badawczych"
+        },
+        {
+          "key": "field_offer_card_3_description",
+          "label": "Opis",
+          "name": "description",
+          "type": "textarea",
+          "default_value": "Pomagamy w organizacji projektów naukowych i eksperckich."
+        },
+        {
+          "key": "field_offer_card_3_icon",
+          "label": "Ikona",
+          "name": "icon",
+          "type": "image",
+          "return_format": "array"
+        },
+        {
+          "key": "field_offer_card_3_color",
+          "label": "Kolor tła",
+          "name": "color",
+          "type": "color_picker",
+          "default_value": "#000C32"
+        },
+        {
+          "key": "field_offer_card_3_width",
+          "label": "Szerokość",
+          "name": "width",
+          "type": "text",
+          "default_value": "50%"
+        },
+        {
+          "key": "field_offer_card_3_tile_url",
+          "label": "URL Kafelka",
+          "name": "tile_url_card",
+          "type": "text",
+          "default_value": "",
+          "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+        }
+      ]
+    },
+    {
+      "key": "field_offer_card_4",
+      "label": "Kafelek 4",
+      "name": "offer_card_4",
+      "type": "group",
+      "sub_fields": [
+        {
+          "key": "field_offer_card_4_title",
+          "label": "Tytuł",
+          "name": "title",
+          "type": "text",
+          "default_value": "Inicjatywy międzykulturowe"
+        },
+        {
+          "key": "field_offer_card_4_description",
+          "label": "Opis",
+          "name": "description",
+          "type": "textarea",
+          "default_value": "Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne."
+        },
+        {
+          "key": "field_offer_card_4_icon",
+          "label": "Ikona",
+          "name": "icon",
+          "type": "image",
+          "return_format": "array"
+        },
+        {
+          "key": "field_offer_card_4_color",
+          "label": "Kolor tła",
+          "name": "color",
+          "type": "color_picker",
+          "default_value": "#0BA0D8"
+        },
+        {
+          "key": "field_offer_card_4_width",
+          "label": "Szerokość",
+          "name": "width",
+          "type": "text",
+          "default_value": "50%"
+        },
+        {
+          "key": "field_offer_card_4_tile_url",
+          "label": "URL Kafelka",
+          "name": "tile_url_card",
+          "type": "text",
+          "default_value": "",
+          "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+        }
+      ]
+    },
+    {
+      "key": "field_offer_card_5",
+      "label": "Kafelek 5",
+      "name": "offer_card_5",
+      "type": "group",
+      "sub_fields": [
+        {
+          "key": "field_offer_card_5_title",
+          "label": "Tytuł",
+          "name": "title",
+          "type": "text",
+          "default_value": "Rozwiązania technologiczne dla eventów"
+        },
+        {
+          "key": "field_offer_card_5_description",
+          "label": "Opis",
+          "name": "description",
+          "type": "textarea",
+          "default_value": "Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną."
+        },
+        {
+          "key": "field_offer_card_5_icon",
+          "label": "Ikona",
+          "name": "icon",
+          "type": "image",
+          "return_format": "array"
+        },
+        {
+          "key": "field_offer_card_5_color",
+          "label": "Kolor tła",
+          "name": "color",
+          "type": "color_picker",
+          "default_value": "#000C32"
+        },
+        {
+          "key": "field_offer_card_5_width",
+          "label": "Szerokość",
+          "name": "width",
+          "type": "text",
+          "default_value": "40%"
+        },
+        {
+          "key": "field_offer_card_5_tile_url",
+          "label": "URL Kafelka",
+          "name": "tile_url_card",
+          "type": "text",
+          "default_value": "",
+          "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+        }
+      ]
+    },
+    {
+      "key": "field_offer_card_6",
+      "label": "Kafelek 6",
+      "name": "offer_card_6",
+      "type": "group",
+      "sub_fields": [
+        {
+          "key": "field_offer_card_6_title",
+          "label": "Tytuł",
+          "name": "title",
+          "type": "text",
+          "default_value": "Eventy specjalne"
+        },
+        {
+          "key": "field_offer_card_6_description",
+          "label": "Opis",
+          "name": "description",
+          "type": "textarea",
+          "default_value": "Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych."
+        },
+        {
+          "key": "field_offer_card_6_icon",
+          "label": "Ikona",
+          "name": "icon",
+          "type": "image",
+          "return_format": "array"
+        },
+        {
+          "key": "field_offer_card_6_color",
+          "label": "Kolor tła",
+          "name": "color",
+          "type": "color_picker",
+          "default_value": "#0BA0D8"
+        },
+        {
+          "key": "field_offer_card_6_width",
+          "label": "Szerokość",
+          "name": "width",
+          "type": "text",
+          "default_value": "60%"
+        },
+        {
+          "key": "field_offer_card_6_tile_url",
+          "label": "URL Kafelka",
+          "name": "tile_url_card",
+          "type": "text",
+          "default_value": "",
+          "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+        }
+      ]
+    },
+    {
+      "key": "field_offer_approach_subtitle",
+      "label": "Podejście - Podtytuł",
+      "name": "offer_approach_subtitle",
+      "type": "text",
+      "default_value": "Nasze podejście",
+      "instructions": "Podtytuł sekcji"
+    },
+    {
+      "key": "field_offer_approach_title",
+      "label": "Podejście - Tytuł",
+      "name": "offer_approach_title",
+      "type": "text",
+      "default_value": "Dlaczego warto nam zaufać",
+      "instructions": "Główny tytuł sekcji"
+    },
+    {
+      "key": "field_offer_approach_description",
+      "label": "Podejście - Opis",
+      "name": "offer_approach_description",
+      "type": "textarea",
+      "default_value": "Każde wydarzenie traktujemy jako wyjątkową okazję do tworzenia przestrzeni dla dialogu, wymiany wiedzy i budowania relacji. Naszą siłą jest połączenie dbałości o detale, nowoczesnych technologii i otwartości na różnorodność kulturową. Dzięki temu realizujemy projekty, które inspirują i zostawiają trwały ślad.",
+      "instructions": "Opis sekcji"
+    },
+    {
+      "key": "field_offer_approach_highlight_text",
+      "label": "Podejście - Tekst z highlightem",
+      "name": "offer_approach_highlight_text",
+      "type": "textarea",
+      "default_value": "Współpracujemy z partnerami na całym świecie, łącząc różne środowiska – od biznesu i nauki, po kulturę i sektor społeczny.",
+      "instructions": "Tekst pod wyróżnionym słowem"
+    },
+    {
+      "key": "field_offer_approach_highlight_word",
+      "label": "Podejście - Wyróżnione słowo",
+      "name": "offer_approach_highlight_word",
+      "type": "text",
+      "default_value": "Międzynarodowa perspektywa",
+      "instructions": "Słowo/fraza do wyróżnienia"
+    },
+    {
+      "key": "field_offer_approach_image_small",
+      "label": "Podejście - Małe zdjęcie",
+      "name": "offer_approach_image_small",
+      "type": "image",
+      "return_format": "array",
+      "instructions": "Małe zdjęcie w lewej kolumnie"
+    },
+    {
+      "key": "field_offer_approach_image_large",
+      "label": "Podejście - Duże zdjęcie",
+      "name": "offer_approach_image_large",
+      "type": "image",
+      "return_format": "array",
+      "instructions": "Duże zdjęcie w prawej kolumnie"
+    },
+    {
+      "key": "field_offer_approach_background_image",
+      "label": "Podejście - Tło",
+      "name": "offer_approach_background_image",
+      "type": "image",
+      "return_format": "array",
+      "instructions": "Obraz tła (Group 1.png)"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-offer.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Pola do zarządzania treścią strony oferty"
+}

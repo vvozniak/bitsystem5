@@ -4,66 +4,66 @@
     "fields": [
         {
             "key": "field_offer_hero_title_highlight",
-            "label": "Hero - Tytuł wyróżniony",
+            "label": "Hero - Tytu\u0142 wyr\u00f3\u017cniony",
             "name": "offer_hero_title_highlight",
             "type": "text",
-            "default_value": "Doświadczenia",
-            "instructions": "Słowo z highlightem w tytule hero"
+            "default_value": "Do\u015bwiadczenia",
+            "instructions": "S\u0142owo z highlightem w tytule hero"
         },
         {
             "key": "field_offer_hero_title_rest",
-            "label": "Hero - Reszta tytułu",
+            "label": "Hero - Reszta tytu\u0142u",
             "name": "offer_hero_title_rest",
             "type": "text",
-            "default_value": ", które łączą świat",
-            "instructions": "Tekst po wyróżnionym słowie"
+            "default_value": ", kt\u00f3re \u0142\u0105cz\u0105 \u015bwiat",
+            "instructions": "Tekst po wyr\u00f3\u017cnionym s\u0142owie"
         },
         {
             "key": "field_offer_hero_description",
             "label": "Hero - Opis",
             "name": "offer_hero_description",
             "type": "textarea",
-            "default_value": "Łączymy doświadczenie organizacyjne z pasją do współpracy międzykulturowej, oferując kompleksową obsługę projektów o zasięgu globalnym.",
+            "default_value": "\u0141\u0105czymy do\u015bwiadczenie organizacyjne z pasj\u0105 do wsp\u00f3\u0142pracy mi\u0119dzykulturowej, oferuj\u0105c kompleksow\u0105 obs\u0142ug\u0119 projekt\u00f3w o zasi\u0119gu globalnym.",
             "instructions": "Opis w sekcji hero"
         },
         {
             "key": "field_offer_hero_background_image",
-            "label": "Hero - Tło",
+            "label": "Hero - T\u0142o",
             "name": "offer_hero_background_image",
             "type": "image",
             "return_format": "array",
-            "instructions": "Obraz tła dla sekcji hero"
+            "instructions": "Obraz t\u0142a dla sekcji hero"
         },
         {
             "key": "field_offer_section_subtitle",
-            "label": "Oferta - Podtytuł",
+            "label": "Oferta - Podtytu\u0142",
             "name": "offer_section_subtitle",
             "type": "text",
             "default_value": "Nasza oferta",
-            "instructions": "Podtytuł sekcji oferty"
+            "instructions": "Podtytu\u0142 sekcji oferty"
         },
         {
             "key": "field_offer_section_title_before",
-            "label": "Oferta - Tytuł przed highlightem",
+            "label": "Oferta - Tytu\u0142 przed highlightem",
             "name": "offer_section_title_before",
             "type": "text",
-            "default_value": "Wydarzenia bez granic –",
-            "instructions": "Tekst tytułu przed wyróżnieniem"
+            "default_value": "Wydarzenia bez granic \u2013",
+            "instructions": "Tekst tytu\u0142u przed wyr\u00f3\u017cnieniem"
         },
         {
             "key": "field_offer_section_title_highlight",
-            "label": "Oferta - Tytuł wyróżniony",
+            "label": "Oferta - Tytu\u0142 wyr\u00f3\u017cniony",
             "name": "offer_section_title_highlight",
             "type": "text",
-            "default_value": "łączymy ludzi, idee i kultury",
-            "instructions": "Wyróżniona część tytułu"
+            "default_value": "\u0142\u0105czymy ludzi, idee i kultury",
+            "instructions": "Wyr\u00f3\u017cniona cz\u0119\u015b\u0107 tytu\u0142u"
         },
         {
             "key": "field_offer_section_description",
             "label": "Oferta - Opis",
             "name": "offer_section_description",
             "type": "textarea",
-            "default_value": "Działamy na styku biznesu, nauki i kultury. Organizujemy wydarzenia, które łączą ludzi, wiedzę i technologie, wspierając rozwój współpracy ponad granicami. Sprawdź, czym się zajmujemy:",
+            "default_value": "Dzia\u0142amy na styku biznesu, nauki i kultury. Organizujemy wydarzenia, kt\u00f3re \u0142\u0105cz\u0105 ludzi, wiedz\u0119 i technologie, wspieraj\u0105c rozw\u00f3j wsp\u00f3\u0142pracy ponad granicami. Sprawd\u017a, czym si\u0119 zajmujemy:",
             "instructions": "Opis sekcji oferty"
         },
         {
@@ -90,7 +90,7 @@
             "sub_fields": [
                 {
                     "key": "field_offer_card_1_title",
-                    "label": "Tytuł",
+                    "label": "Tytu\u0142",
                     "name": "title",
                     "type": "text",
                     "default_value": "Konferencje i wydarzenia"
@@ -100,7 +100,7 @@
                     "label": "Opis",
                     "name": "description",
                     "type": "textarea",
-                    "default_value": "Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów."
+                    "default_value": "Od planowania po realizacj\u0119 \u2013 zapewniamy pe\u0142n\u0105 obs\u0142ug\u0119 konferencji, spotka\u0144 i event\u00f3w."
                 },
                 {
                     "key": "field_offer_card_1_icon",
@@ -111,14 +111,14 @@
                 },
                 {
                     "key": "field_offer_card_1_color",
-                    "label": "Kolor tła",
+                    "label": "Kolor t\u0142a",
                     "name": "color",
                     "type": "color_picker",
                     "default_value": "#000C32"
                 },
                 {
                     "key": "field_offer_card_1_width",
-                    "label": "Szerokość",
+                    "label": "Szeroko\u015b\u0107",
                     "name": "width",
                     "type": "text",
                     "default_value": "35%"
@@ -126,10 +126,10 @@
                 {
                     "key": "field_offer_card_1_tile_url",
                     "label": "URL Kafelka",
-                    "name": "tile_url",
+                    "name": "tile_url_1",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wy\u0142\u0105czy\u0107 klikni\u0119cie."
                 }
             ]
         },
@@ -141,7 +141,7 @@
             "sub_fields": [
                 {
                     "key": "field_offer_card_2_title",
-                    "label": "Tytuł",
+                    "label": "Tytu\u0142",
                     "name": "title",
                     "type": "text",
                     "default_value": "Misje gospodarcze i naukowe"
@@ -151,7 +151,7 @@
                     "label": "Opis",
                     "name": "description",
                     "type": "textarea",
-                    "default_value": "Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą."
+                    "default_value": "Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granic\u0105."
                 },
                 {
                     "key": "field_offer_card_2_icon",
@@ -162,14 +162,14 @@
                 },
                 {
                     "key": "field_offer_card_2_color",
-                    "label": "Kolor tła",
+                    "label": "Kolor t\u0142a",
                     "name": "color",
                     "type": "color_picker",
                     "default_value": "#0BA0D8"
                 },
                 {
                     "key": "field_offer_card_2_width",
-                    "label": "Szerokość",
+                    "label": "Szeroko\u015b\u0107",
                     "name": "width",
                     "type": "text",
                     "default_value": "65%"
@@ -177,10 +177,10 @@
                 {
                     "key": "field_offer_card_2_tile_url",
                     "label": "URL Kafelka",
-                    "name": "tile_url",
+                    "name": "tile_url_2",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wy\u0142\u0105czy\u0107 klikni\u0119cie."
                 }
             ]
         },
@@ -192,17 +192,17 @@
             "sub_fields": [
                 {
                     "key": "field_offer_card_3_title",
-                    "label": "Tytuł",
+                    "label": "Tytu\u0142",
                     "name": "title",
                     "type": "text",
-                    "default_value": "Wsparcie projektów badawczych"
+                    "default_value": "Wsparcie projekt\u00f3w badawczych"
                 },
                 {
                     "key": "field_offer_card_3_description",
                     "label": "Opis",
                     "name": "description",
                     "type": "textarea",
-                    "default_value": "Pomagamy w organizacji projektów naukowych i eksperckich."
+                    "default_value": "Pomagamy w organizacji projekt\u00f3w naukowych i eksperckich."
                 },
                 {
                     "key": "field_offer_card_3_icon",
@@ -213,14 +213,14 @@
                 },
                 {
                     "key": "field_offer_card_3_color",
-                    "label": "Kolor tła",
+                    "label": "Kolor t\u0142a",
                     "name": "color",
                     "type": "color_picker",
                     "default_value": "#000C32"
                 },
                 {
                     "key": "field_offer_card_3_width",
-                    "label": "Szerokość",
+                    "label": "Szeroko\u015b\u0107",
                     "name": "width",
                     "type": "text",
                     "default_value": "50%"
@@ -228,10 +228,10 @@
                 {
                     "key": "field_offer_card_3_tile_url",
                     "label": "URL Kafelka",
-                    "name": "tile_url",
+                    "name": "tile_url_3",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wy\u0142\u0105czy\u0107 klikni\u0119cie."
                 }
             ]
         },
@@ -243,17 +243,17 @@
             "sub_fields": [
                 {
                     "key": "field_offer_card_4_title",
-                    "label": "Tytuł",
+                    "label": "Tytu\u0142",
                     "name": "title",
                     "type": "text",
-                    "default_value": "Inicjatywy międzykulturowe"
+                    "default_value": "Inicjatywy mi\u0119dzykulturowe"
                 },
                 {
                     "key": "field_offer_card_4_description",
                     "label": "Opis",
                     "name": "description",
                     "type": "textarea",
-                    "default_value": "Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne."
+                    "default_value": "Budujemy mosty mi\u0119dzy r\u00f3\u017cnymi \u015brodowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne."
                 },
                 {
                     "key": "field_offer_card_4_icon",
@@ -264,14 +264,14 @@
                 },
                 {
                     "key": "field_offer_card_4_color",
-                    "label": "Kolor tła",
+                    "label": "Kolor t\u0142a",
                     "name": "color",
                     "type": "color_picker",
                     "default_value": "#0BA0D8"
                 },
                 {
                     "key": "field_offer_card_4_width",
-                    "label": "Szerokość",
+                    "label": "Szeroko\u015b\u0107",
                     "name": "width",
                     "type": "text",
                     "default_value": "50%"
@@ -279,10 +279,10 @@
                 {
                     "key": "field_offer_card_4_tile_url",
                     "label": "URL Kafelka",
-                    "name": "tile_url",
+                    "name": "tile_url_4",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wy\u0142\u0105czy\u0107 klikni\u0119cie."
                 }
             ]
         },
@@ -294,17 +294,17 @@
             "sub_fields": [
                 {
                     "key": "field_offer_card_5_title",
-                    "label": "Tytuł",
+                    "label": "Tytu\u0142",
                     "name": "title",
                     "type": "text",
-                    "default_value": "Rozwiązania technologiczne dla eventów"
+                    "default_value": "Rozwi\u0105zania technologiczne dla event\u00f3w"
                 },
                 {
                     "key": "field_offer_card_5_description",
                     "label": "Opis",
                     "name": "description",
                     "type": "textarea",
-                    "default_value": "Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną."
+                    "default_value": "Zapewniamy nowoczesne rozwi\u0105zania technologiczne dla event\u00f3w, obejmuj\u0105ce obs\u0142ug\u0119 techniczn\u0105."
                 },
                 {
                     "key": "field_offer_card_5_icon",
@@ -315,14 +315,14 @@
                 },
                 {
                     "key": "field_offer_card_5_color",
-                    "label": "Kolor tła",
+                    "label": "Kolor t\u0142a",
                     "name": "color",
                     "type": "color_picker",
                     "default_value": "#000C32"
                 },
                 {
                     "key": "field_offer_card_5_width",
-                    "label": "Szerokość",
+                    "label": "Szeroko\u015b\u0107",
                     "name": "width",
                     "type": "text",
                     "default_value": "40%"
@@ -330,10 +330,10 @@
                 {
                     "key": "field_offer_card_5_tile_url",
                     "label": "URL Kafelka",
-                    "name": "tile_url",
+                    "name": "tile_url_5",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wy\u0142\u0105czy\u0107 klikni\u0119cie."
                 }
             ]
         },
@@ -345,7 +345,7 @@
             "sub_fields": [
                 {
                     "key": "field_offer_card_6_title",
-                    "label": "Tytuł",
+                    "label": "Tytu\u0142",
                     "name": "title",
                     "type": "text",
                     "default_value": "Eventy specjalne"
@@ -355,7 +355,7 @@
                     "label": "Opis",
                     "name": "description",
                     "type": "textarea",
-                    "default_value": "Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych."
+                    "default_value": "Organizujemy spotkania integracyjne dla firm, uroczysto\u015bci tematyczne oraz bale dla dzieci i doros\u0142ych."
                 },
                 {
                     "key": "field_offer_card_6_icon",
@@ -366,14 +366,14 @@
                 },
                 {
                     "key": "field_offer_card_6_color",
-                    "label": "Kolor tła",
+                    "label": "Kolor t\u0142a",
                     "name": "color",
                     "type": "color_picker",
                     "default_value": "#0BA0D8"
                 },
                 {
                     "key": "field_offer_card_6_width",
-                    "label": "Szerokość",
+                    "label": "Szeroko\u015b\u0107",
                     "name": "width",
                     "type": "text",
                     "default_value": "60%"
@@ -381,76 +381,76 @@
                 {
                     "key": "field_offer_card_6_tile_url",
                     "label": "URL Kafelka",
-                    "name": "tile_url",
+                    "name": "tile_url_6",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wy\u0142\u0105czy\u0107 klikni\u0119cie."
                 }
             ]
         },
         {
             "key": "field_offer_approach_subtitle",
-            "label": "Podejście - Podtytuł",
+            "label": "Podej\u015bcie - Podtytu\u0142",
             "name": "offer_approach_subtitle",
             "type": "text",
-            "default_value": "Nasze podejście",
-            "instructions": "Podtytuł sekcji"
+            "default_value": "Nasze podej\u015bcie",
+            "instructions": "Podtytu\u0142 sekcji"
         },
         {
             "key": "field_offer_approach_title",
-            "label": "Podejście - Tytuł",
+            "label": "Podej\u015bcie - Tytu\u0142",
             "name": "offer_approach_title",
             "type": "text",
-            "default_value": "Dlaczego warto nam zaufać",
-            "instructions": "Główny tytuł sekcji"
+            "default_value": "Dlaczego warto nam zaufa\u0107",
+            "instructions": "G\u0142\u00f3wny tytu\u0142 sekcji"
         },
         {
             "key": "field_offer_approach_description",
-            "label": "Podejście - Opis",
+            "label": "Podej\u015bcie - Opis",
             "name": "offer_approach_description",
             "type": "textarea",
-            "default_value": "Każde wydarzenie traktujemy jako wyjątkową okazję do tworzenia przestrzeni dla dialogu, wymiany wiedzy i budowania relacji. Naszą siłą jest połączenie dbałości o detale, nowoczesnych technologii i otwartości na różnorodność kulturową. Dzięki temu realizujemy projekty, które inspirują i zostawiają trwały ślad.",
+            "default_value": "Ka\u017cde wydarzenie traktujemy jako wyj\u0105tkow\u0105 okazj\u0119 do tworzenia przestrzeni dla dialogu, wymiany wiedzy i budowania relacji. Nasz\u0105 si\u0142\u0105 jest po\u0142\u0105czenie dba\u0142o\u015bci o detale, nowoczesnych technologii i otwarto\u015bci na r\u00f3\u017cnorodno\u015b\u0107 kulturow\u0105. Dzi\u0119ki temu realizujemy projekty, kt\u00f3re inspiruj\u0105 i zostawiaj\u0105 trwa\u0142y \u015blad.",
             "instructions": "Opis sekcji"
         },
         {
             "key": "field_offer_approach_highlight_text",
-            "label": "Podejście - Tekst z highlightem",
+            "label": "Podej\u015bcie - Tekst z highlightem",
             "name": "offer_approach_highlight_text",
             "type": "textarea",
-            "default_value": "Współpracujemy z partnerami na całym świecie, łącząc różne środowiska – od biznesu i nauki, po kulturę i sektor społeczny.",
-            "instructions": "Tekst pod wyróżnionym słowem"
+            "default_value": "Wsp\u00f3\u0142pracujemy z partnerami na ca\u0142ym \u015bwiecie, \u0142\u0105cz\u0105c r\u00f3\u017cne \u015brodowiska \u2013 od biznesu i nauki, po kultur\u0119 i sektor spo\u0142eczny.",
+            "instructions": "Tekst pod wyr\u00f3\u017cnionym s\u0142owem"
         },
         {
             "key": "field_offer_approach_highlight_word",
-            "label": "Podejście - Wyróżnione słowo",
+            "label": "Podej\u015bcie - Wyr\u00f3\u017cnione s\u0142owo",
             "name": "offer_approach_highlight_word",
             "type": "text",
-            "default_value": "Międzynarodowa perspektywa",
-            "instructions": "Słowo/fraza do wyróżnienia"
+            "default_value": "Mi\u0119dzynarodowa perspektywa",
+            "instructions": "S\u0142owo/fraza do wyr\u00f3\u017cnienia"
         },
         {
             "key": "field_offer_approach_image_small",
-            "label": "Podejście - Małe zdjęcie",
+            "label": "Podej\u015bcie - Ma\u0142e zdj\u0119cie",
             "name": "offer_approach_image_small",
             "type": "image",
             "return_format": "array",
-            "instructions": "Małe zdjęcie w lewej kolumnie"
+            "instructions": "Ma\u0142e zdj\u0119cie w lewej kolumnie"
         },
         {
             "key": "field_offer_approach_image_large",
-            "label": "Podejście - Duże zdjęcie",
+            "label": "Podej\u015bcie - Du\u017ce zdj\u0119cie",
             "name": "offer_approach_image_large",
             "type": "image",
             "return_format": "array",
-            "instructions": "Duże zdjęcie w prawej kolumnie"
+            "instructions": "Du\u017ce zdj\u0119cie w prawej kolumnie"
         },
         {
             "key": "field_offer_approach_background_image",
-            "label": "Podejście - Tło",
+            "label": "Podej\u015bcie - T\u0142o",
             "name": "offer_approach_background_image",
             "type": "image",
             "return_format": "array",
-            "instructions": "Obraz tła (Group 1.png)"
+            "instructions": "Obraz t\u0142a (Group 1.png)"
         }
     ],
     "location": [
@@ -469,5 +469,5 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Pola do zarządzania treścią strony oferty"
+    "description": "Pola do zarz\u0105dzania tre\u015bci\u0105 strony oferty"
 }
