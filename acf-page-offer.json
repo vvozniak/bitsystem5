@@ -124,12 +124,12 @@
                     "default_value": "35%"
                 },
                 {
-                    "key": "field_offer_card_1_link",
-                    "label": "Link",
-                    "name": "link",
+                    "key": "field_offer_card_1_tile_url",
+                    "label": "URL Kafelka",
+                    "name": "tile_url",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
                 }
             ]
         },
@@ -175,12 +175,12 @@
                     "default_value": "65%"
                 },
                 {
-                    "key": "field_offer_card_2_link",
-                    "label": "Link",
-                    "name": "link",
+                    "key": "field_offer_card_2_tile_url",
+                    "label": "URL Kafelka",
+                    "name": "tile_url",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
                 }
             ]
         },
@@ -226,12 +226,12 @@
                     "default_value": "50%"
                 },
                 {
-                    "key": "field_offer_card_3_link",
-                    "label": "Link",
-                    "name": "link",
+                    "key": "field_offer_card_3_tile_url",
+                    "label": "URL Kafelka",
+                    "name": "tile_url",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
                 }
             ]
         },
@@ -277,12 +277,12 @@
                     "default_value": "50%"
                 },
                 {
-                    "key": "field_offer_card_4_link",
-                    "label": "Link",
-                    "name": "link",
+                    "key": "field_offer_card_4_tile_url",
+                    "label": "URL Kafelka",
+                    "name": "tile_url",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
                 }
             ]
         },
@@ -328,12 +328,12 @@
                     "default_value": "40%"
                 },
                 {
-                    "key": "field_offer_card_5_link",
-                    "label": "Link",
-                    "name": "link",
+                    "key": "field_offer_card_5_tile_url",
+                    "label": "URL Kafelka",
+                    "name": "tile_url",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
                 }
             ]
         },
@@ -379,12 +379,12 @@
                     "default_value": "60%"
                 },
                 {
-                    "key": "field_offer_card_6_link",
-                    "label": "Link",
-                    "name": "link",
+                    "key": "field_offer_card_6_tile_url",
+                    "label": "URL Kafelka",
+                    "name": "tile_url",
                     "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
+                    "instructions": "Wpisz link dla tego kafelka (np. /oferta/konferencje lub https://example.com). Zostaw puste aby wyłączyć kliknięcie."
                 }
             ]
         },
