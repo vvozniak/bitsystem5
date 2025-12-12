@@ -110,11 +110,14 @@ function create_pakiety_post_type() {
                 'name'          => __('Pakiety', 'textdomain'),
                 'singular_name' => __('Pakiet', 'textdomain'),
             ),
-            'public'      => true,
-            'has_archive' => false,
-            'supports'    => array('title', 'editor'),
-            'menu_icon'   => 'dashicons-cart',
-            'rewrite'     => array('slug' => 'pakiety'), // Ustawienie własnego sluga
+            'public'             => true,
+            'publicly_queryable' => false, // Wyłącza publiczne strony pakietów (SEO)
+            'show_ui'            => true,  // Pokazuje w panelu admin
+            'exclude_from_search' => true, // Wyklucza z wyszukiwania WP
+            'has_archive'        => false,
+            'supports'           => array('title', 'editor'),
+            'menu_icon'          => 'dashicons-cart',
+            'rewrite'            => array('slug' => 'pakiety'),
         )
     );
 }
@@ -220,6 +223,9 @@ function cpt_loga_klientow_init() {
     $args = [
         'labels'             => $labels,
         'public'             => true,
+        'publicly_queryable' => false, // Wyłącza publiczne strony logo (SEO)
+        'show_ui'            => true,  // Pokazuje w panelu admin
+        'exclude_from_search' => true, // Wyklucza z wyszukiwania WP
         'has_archive'        => false,
         'show_in_rest'       => false,
         'menu_position'      => 6,

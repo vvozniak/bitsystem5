@@ -59,8 +59,8 @@ get_header(); ?>
   >
 
   <div class="hero-content" style="position:relative; margin-left:16.66vw; max-width:55vw; z-index:2;">
-    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.2; font-size:3.2vw; font-family:'Manrope', sans-serif;">
-      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.3vw 1vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800;">
+    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.6; font-size:3.2vw; font-family:'Manrope', sans-serif;">
+      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.5vw 1.2vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800; display:inline-block; box-decoration-break:clone; -webkit-box-decoration-break:clone;">
         Projekty
       </span>, które łączą świat
     </p>
@@ -257,18 +257,19 @@ if ($realizacje_query->have_posts()) :
                             font-size: 1.88vw; 
                             font-weight: 600; 
                             margin-bottom: 1vw;
+                            line-height: 1.3;
                         ">
                             <?php echo esc_html($title_line1); ?>
                             <span style="
-                                display: block; 
+                                display: inline-block; 
                                 font-size: 2.2vw; 
                                 font-weight: 800;
                                 background-color: #0BA0D882;
                                 color: white;
                                 padding: 0.3vw 1vw;
-                                border-radius: 20px; /* Dodane zaokrąglenia */
-                                display: inline-block;
+                                border-radius: 20px;
                                 margin-top: 0.5vw;
+                                white-space: nowrap;
                             ">
                                 <?php echo esc_html($title_line2); ?>
                             </span>
@@ -411,9 +412,9 @@ if ($realizacje_query->have_posts()) :
                       <span class="highlighted-word"><?php echo esc_html($title_highlight); ?></span>
                     </h2>
 
-                    <p class="kobiety-description">
-                      <?php echo esc_html($description); ?>
-                    </p>
+                    <div class="kobiety-description">
+                      <?php echo wp_kses_post($description); ?>
+                    </div>
 
                     <?php if (!empty($icons)) : ?>
                         <div class="kobiety-icons">
@@ -541,40 +542,26 @@ if ($realizacje_query->have_posts()) :
                                 font-weight: 700; 
                                 line-height: 1.2; 
                                 margin-bottom: 2vw;
-                                position: relative;
-                                z-index: 5; 
                             ">
                                 <?php if ($title_before) : ?>
-                                    <?php echo esc_html($title_before); ?>
+                                    <?php echo esc_html($title_before); ?> 
                                 <?php endif; ?>
                                 
                                 <span style="
+                                    display: inline-block;
+                                    background-color: #0BA0D882;
                                     color: white;
                                     font-weight: 800;
-                                    padding: 0.1vw 0.8vw 0.1vw 0;
-                                    position: relative; 
-                                    z-index: 2;
+                                    padding: 0.2vw 0.8vw;
+                                    border-radius: 40px;
+                                    white-space: nowrap;
+                                    margin: 0 0.3vw;
                                 ">
                                     <?php echo esc_html($title_highlight); ?>
-                                    
-                                    <span style="
-                                        content: '';
-                                        background-color: #0BA0D882;
-                                        position: absolute;
-                                        top: 0;
-                                        right: 0;
-                                        width: 150%; 
-                                        height: 100%;
-                                        border-radius: 40px; 
-                                        z-index: -1;
-                                        margin-left: -0.8vw;
-                                    "></span>
                                 </span>
                                 
                                 <?php if ($title_after) : ?>
-                                    <span style="position: relative; z-index: 2;">
-                                        <?php echo esc_html($title_after); ?>
-                                    </span>
+                                    <?php echo esc_html($title_after); ?>
                                 <?php endif; ?>
                             </h2>
 
@@ -659,39 +646,20 @@ if ($realizacje_query->have_posts()) :
                                 margin-bottom: 2vw;
                             ">
                                 <?php if ($title_before) : ?>
-                                    <?php echo esc_html($title_before); ?>
+                                    <?php echo esc_html($title_before); ?> 
                                 <?php endif; ?>
                                 
-                                <span style=" 
+                                <span style="
                                     display: inline-block;
-                                    position: relative; 
-                                    z-index: 2; 
-                                "> 
-                                    
-                                    <span style="
-                                        background-color: #0BA0D882; 
-                                        position: absolute;
-                                        top: 0;
-                                        left: 2%; 
-                                        width: 300%; 
-                                        height: 100%;
-                                        border-radius: 40px; 
-                                        z-index: -1; 
-                                        margin-left: calc(-<?php echo $text_padding_offset; ?>);
-                                    ">
-                                    </span>
-
-                                    <span style="
-                                        color: white; 
-                                        font-weight: 600;
-                                        position: relative; 
-                                        padding: 0.1vw <?php echo $text_padding_offset; ?> 0.1vw <?php echo $text_padding_offset; ?>;
-                                        line-height: 1.2;
-                                        z-index: 2; 
-                                        white-space: nowrap;
-                                    ">
-                                          <?php echo esc_html($title_highlight); ?>
-                                    </span>
+                                    background-color: #0BA0D882;
+                                    color: white;
+                                    font-weight: 800;
+                                    padding: 0.2vw 0.8vw;
+                                    border-radius: 40px;
+                                    white-space: nowrap;
+                                    margin: 0 0.3vw;
+                                ">
+                                    <?php echo esc_html($title_highlight); ?>
                                 </span>
                                 
                                 <?php if ($title_after) : ?>

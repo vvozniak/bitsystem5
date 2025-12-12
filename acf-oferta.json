@@ -38,6 +38,26 @@
             "return_format": "value"
         },
         {
+            "key": "field_realizacja_tytul",
+            "label": "Tytuł Realizacji (wyświetlany na Karcie)",
+            "name": "realizacja_tytul",
+            "type": "text",
+            "instructions": "Pełny tytuł, np. 'Konferencja Wschodnia - Edycja 2024'. Użyj myślnika, aby określić miejsce podziału tekstu do akcentowania.",
+            "required": 1,
+            "placeholder": "Np. Wizyta studyjna - Trzy Pałace"
+        },
+        {
+            "key": "field_obrazek_tytulowy",
+            "label": "Obrazek Tytułowy (Tło Karty)",
+            "name": "obrazek_tytulowy",
+            "type": "image",
+            "instructions": "Obrazek wyświetlany jako tło karty realizacji na stronie głównej",
+            "required": 1,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
             "key": "field_hero_title_line1",
             "label": "Tytuł - Linia 1",
             "name": "hero_title_line1",

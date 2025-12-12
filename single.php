@@ -3,14 +3,23 @@
  * Szablon pojedynczego wpisu bloga z ACF
  */
 get_header();
+
+// Pobieranie tła hero - Featured Image lub fallback
+$hero_bg_url = get_template_directory_uri() . '/images/webp/tlo3.webp'; // Domyślne tło
+if (has_post_thumbnail()) {
+    $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+    if ($featured_image) {
+        $hero_bg_url = $featured_image;
+    }
+}
 ?>
 
 <!-- HERO SECTION -->
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:-40px;">
 
-  <!-- Stałe tło -->
+  <!-- Tło z Featured Image lub domyślne -->
   <img 
-    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo3.webp" 
+    src="<?php echo esc_url($hero_bg_url); ?>" 
     alt="Tło wpisu" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >
@@ -24,8 +33,8 @@ get_header();
     $tytul = get_field('tytul'); // pole ACF
     if ($tytul) {
         $parts = explode('-', $tytul, 2); // podział na wyróżnioną część
-        echo '<h1 style="font-size:3.2vw; font-family:\'Manrope\', sans-serif; line-height:1.2; margin-bottom:0;">';
-        echo '<span style="background-color:#0BA0D880; padding:0.3vw 1vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; font-weight:800;">' 
+        echo '<h1 style="font-size:3.2vw; font-family:\'Manrope\', sans-serif; line-height:1.6; margin-bottom:0;">';
+        echo '<span style="background-color:#0BA0D880; padding:0.5vw 1.2vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; font-weight:800; display:inline-block; box-decoration-break:clone; -webkit-box-decoration-break:clone;">' 
             . trim($parts[0]) . '</span>';
         if (isset($parts[1])) {
             echo ', ' . trim($parts[1]);
@@ -33,7 +42,7 @@ get_header();
         echo '</h1>';
     } else {
         // fallback na domyślny tytuł WP
-        echo '<h1 style="font-size:3.2vw; font-family:\'Manrope\', sans-serif; line-height:1.2; margin-bottom:0;">' . get_the_title() . '</h1>';
+        echo '<h1 style="font-size:3.2vw; font-family:\'Manrope\', sans-serif; line-height:1.6; margin-bottom:0;">' . get_the_title() . '</h1>';
     }
     ?>
   </div>

@@ -4,12 +4,23 @@
 </head>
 
 <?php
-$pageTitle = "Oferta";
+/**
+ * Template Name: Strona Realizacji
+ */
+get_header(); 
+
+// Pobieranie tła hero - Featured Image lub fallback
+$hero_bg_url = get_template_directory_uri() . '/images/webp/tlo.webp'; // Domyślne tło
+if (has_post_thumbnail()) {
+    $featured_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+    if ($featured_image) {
+        $hero_bg_url = $featured_image;
+    }
+}
 ?>
-<?php get_header(); ?>
 <section class="hero-section" style="position:relative; overflow:visible; color:white; margin-top:9.01vw;">
   <img 
-    src="<?php echo get_template_directory_uri(); ?>/images/webp/tlo.webp" 
+    src="<?php echo esc_url($hero_bg_url); ?>" 
     alt="Tło wydarzenia" 
     style="position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-10;"
   >
@@ -19,8 +30,8 @@ $pageTitle = "Oferta";
   <div class="hero-content" style="position:relative; margin-left:16.66vw; max-width:55vw; z-index:2;">
     
   
-    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.2; font-size:3.2vw; font-family:'Manrope', sans-serif;">
-      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.3vw 1vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800;">
+    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.6; font-size:3.2vw; font-family:'Manrope', sans-serif;">
+      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.5vw 1.2vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800; display:inline-block; box-decoration-break:clone; -webkit-box-decoration-break:clone;">
         Projekty
       </span>, które łączą świat
     </p>

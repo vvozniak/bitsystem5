@@ -25,8 +25,8 @@ get_header();
   <div style="position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(15,23,42,0.6); z-index:-5;"></div>
 
   <div class="hero-content" style="position:relative; margin-left:16.66vw; padding-top:8vw; padding-bottom:8vw; z-index:2; max-width:60vw;">
-    <h1 style="font-size:3.2vw; font-family:'Manrope', sans-serif; line-height:1.2; margin-bottom:1vw; font-weight:800;">
-      <span style="background-color:#0BA0D880; padding:0.3vw 1vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white;">
+    <h1 style="font-size:3.2vw; font-family:'Manrope', sans-serif; line-height:1.6; margin-bottom:1vw; font-weight:800;">
+      <span style="background-color:#0BA0D880; padding:0.5vw 1.2vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; display:inline-block; box-decoration-break:clone; -webkit-box-decoration-break:clone;">
         <?php the_title(); ?>
       </span>
     </h1>
@@ -193,6 +193,11 @@ get_header();
     
     .hero-content h1 {
         font-size: 6vw !important;
+        line-height: 1.8 !important;
+    }
+    
+    .hero-content h1 span {
+        padding: 1vw 2vw !important;
     }
     
     .page-content {
@@ -218,6 +223,11 @@ get_header();
     
     .hero-content h1 {
         font-size: 4vw !important;
+        line-height: 1.7 !important;
+    }
+    
+    .hero-content h1 span {
+        padding: 0.7vw 1.5vw !important;
     }
     
     .page-content {

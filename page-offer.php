@@ -86,8 +86,8 @@ $hero_background = get_field('offer_hero_background_image');
     $hero_title_rest = get_field('offer_hero_title_rest') ?: ', które łączą świat';
     $hero_description = get_field('offer_hero_description') ?: 'Łączymy doświadczenie organizacyjne z pasją do współpracy międzykulturowej, oferując kompleksową obsługę projektów o zasięgu globalnym.';
     ?>
-    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.2; font-size:3.2vw; font-family:'Manrope', sans-serif;">
-      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.3vw 1vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800;">
+    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.6; font-size:3.2vw; font-family:'Manrope', sans-serif;">
+      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.5vw 1.2vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800; display:inline-block; box-decoration-break:clone; -webkit-box-decoration-break:clone;">
         <?php echo esc_html($hero_title_highlight); ?>
       </span><?php echo esc_html($hero_title_rest); ?>
     </p>
@@ -195,18 +195,30 @@ $hero_background = get_field('offer_hero_background_image');
         // Pobieranie kafelków z ACF z uzupełnieniem braków domyślnymi wartościami
         $cards = [];
         $defaults = [
-            1 => ['title'=>'Konferencje i wydarzenia','description'=>'Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów.','icon'=>'webp/conference (1) 1.webp','color'=>'#000C32','width'=>'35%'],
-            2 => ['title'=>'Misje gospodarcze i naukowe','description'=>'Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą.','icon'=>'webp/economic 1.webp','color'=>'#0BA0D8','width'=>'65%'],
-            3 => ['title'=>'Wsparcie projektów badawczych','description'=>'Pomagamy w organizacji projektów naukowych i eksperckich.','icon'=>'webp/scientist 1.webp','color'=>'#000C32','width'=>'50%'],
-            4 => ['title'=>'Inicjatywy międzykulturowe','description'=>'Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne.','icon'=>'webp/culture 1.webp','color'=>'#0BA0D8','width'=>'50%'],
-            5 => ['title'=>'Rozwiązania technologiczne dla eventów','description'=>'Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną.','icon'=>'webp/economic 1 (1).webp','color'=>'#000C32','width'=>'40%'],
-            6 => ['title'=>'Eventy specjalne','description'=>'Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych.','icon'=>'webp/economic 1 (2).webp','color'=>'#0BA0D8','width'=>'60%'],
+            1 => ['title'=>'Konferencje i wydarzenia','description'=>'Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów.','icon'=>'webp/conference (1) 1.webp','color'=>'#000C32','width'=>'35%','link'=>''],
+            2 => ['title'=>'Misje gospodarcze i naukowe','description'=>'Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą.','icon'=>'webp/economic 1.webp','color'=>'#0BA0D8','width'=>'65%','link'=>''],
+            3 => ['title'=>'Wsparcie projektów badawczych','description'=>'Pomagamy w organizacji projektów naukowych i eksperckich.','icon'=>'webp/scientist 1.webp','color'=>'#000C32','width'=>'50%','link'=>''],
+            4 => ['title'=>'Inicjatywy międzykulturowe','description'=>'Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne.','icon'=>'webp/culture 1.webp','color'=>'#0BA0D8','width'=>'50%','link'=>''],
+            5 => ['title'=>'Rozwiązania technologiczne dla eventów','description'=>'Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną.','icon'=>'webp/economic 1 (1).webp','color'=>'#000C32','width'=>'40%','link'=>''],
+            6 => ['title'=>'Eventy specjalne','description'=>'Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych.','icon'=>'webp/economic 1 (2).webp','color'=>'#0BA0D8','width'=>'60%','link'=>''],
         ];
         for ($i = 1; $i <= 6; $i++) {
             $card_raw = get_field('offer_card_' . $i);
             $card = is_array($card_raw) ? $card_raw : [];
-            // scal z domyślną tablicą, aby brakujące color/width/description nie psuły stylu
-            $cards[] = array_merge($defaults[$i], array_filter($card, static function($v) { return $v !== null && $v !== ''; }));
+            
+            // DEBUG - wyświetl pierwszą kartę
+            if ($i === 1) {
+                echo '<!-- DEBUG CARD 1: ' . print_r($card, true) . ' -->';
+            }
+            
+            // Filtrujemy puste wartości, ale zachowujemy 'link' nawet jeśli jest pusty
+            $filtered_card = [];
+            foreach ($card as $key => $value) {
+                if ($key === 'link' || ($value !== null && $value !== '')) {
+                    $filtered_card[$key] = $value;
+                }
+            }
+            $cards[] = array_merge($defaults[$i], $filtered_card);
         }
 
         $height = '13.48vw';
@@ -228,10 +240,10 @@ $hero_background = get_field('offer_hero_background_image');
                 $icon_url = get_template_directory_uri().'/images/'.$b['icon'];
             }
             
-            // Check if card has a link field, otherwise link to offer page
-            $card_link = isset($b['link']) && !empty($b['link']) ? esc_url($b['link']) : '/oferta';
+            // Pobierz link z ACF lub użyj domyślnego
+            $card_link = !empty($b['link']) ? $b['link'] : '/oferta';
             
-            echo '<a href="'.$card_link.'" class="kafelek" style="
+            echo '<a href="'.esc_url($card_link).'" class="kafelek" style="
                 float:left;
                 width:calc('.$card_width.' - '.$margin.');
                 height:'.$height.';

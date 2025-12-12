@@ -31,6 +31,7 @@ Każdy kafelek (Kafelek 1 do Kafelek 6) zawiera:
 - **Ikona**: Obraz ikony kafelka
 - **Kolor tła**: Kolor tła kafelka (wybór koloru)
 - **Szerokość**: Szerokość kafelka w procentach (np. "35%", "50%", "65%")
+- **Link**: Link do podstrony (opcjonalny, domyślnie: /oferta)
 
 Domyślne kafelki:
 1. Konferencje i wydarzenia (35%, #000C32)

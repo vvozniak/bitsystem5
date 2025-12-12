@@ -826,21 +826,11 @@ html, body {
 /* Efekt zakreślenia */
 .offer-title .highlighted-word {
   display: inline-block;
-  padding: auto 0.5vw;
-  position: relative;
-  z-index: 1;
-}
-
-.offer-title .highlighted-word::after {
-  content: '';
-  position: absolute;
-  left: -190%;
-  bottom: 20%; 
-  width: 300%;
-  height: 65%; 
-  background-color: var(--color-highlight); 
-  z-index: -1;
+  padding: 0.2vw 0.8vw;
+  background-color: var(--color-highlight);
   border-radius: 40px;
+  white-space: nowrap;
+  margin: 0 0.3vw;
 }
 
 /* ----------------------------------------------- */
@@ -1257,24 +1247,15 @@ html, body {
 
 
 .highlighted-word1 {
-  position: relative;
+  display: inline-block;
   font-weight: 600;
   color: white;
-  display: inline-block;
-  z-index: 0;
   font-size: 1.25vw;
-}
-
-.highlighted-word1::after {
-  content: '';
-  position: absolute;
-  left: -1%;
-  bottom: 0.15vw;
-  width: 170%;
-  height: 100%;
   background-color: var(--accent);
-  border-radius: 2vw;
-  z-index: -5;
+  padding: 0.2vw 0.8vw;
+  border-radius: 40px;
+  white-space: nowrap;
+  margin: 0 0.3vw;
 }
 
 
@@ -1481,6 +1462,131 @@ html, body {
 /* ================================================= */
 /* RESPONSYWNOŚĆ */
 /* ================================================= */
+
+/* ============================================ */
+/* RESPONSYWNOŚĆ SEKCJI STANDARD - TABLET */
+/* ============================================ */
+@media (max-width: 1024px) {
+  .standard-project-section {
+    padding: 8vw 0 !important;
+  }
+  
+  .standard-container {
+    max-width: 95vw !important;
+    gap: 3vw !important;
+  }
+  
+  .standard-project-section .photo-column {
+    width: 45vw !important;
+  }
+  
+  .standard-project-section .photo-column img {
+    width: 45vw !important;
+    height: 28vw !important;
+    margin-left: -2vw !important;
+  }
+  
+  .standard-project-section .project-subtitle {
+    font-size: 2.5vw !important;
+  }
+  
+  .standard-project-section .project-title {
+    font-size: 2.8vw !important;
+    margin-bottom: 3vw !important;
+  }
+  
+  .standard-project-section .project-description {
+    font-size: 2vw !important;
+    margin-bottom: 2.5vw !important;
+  }
+  
+  .standard-project-section .project-funding {
+    font-size: 1.8vw !important;
+    margin-bottom: 3vw !important;
+  }
+  
+  .standard-project-section .btn-project-cta {
+    font-size: 2.2vw !important;
+    padding: 2vw 4vw !important;
+  }
+}
+
+/* ============================================ */
+/* RESPONSYWNOŚĆ SEKCJI STANDARD - MOBILE */
+/* ============================================ */
+@media (max-width: 768px) {
+  .standard-project-section {
+    padding: 10vw 5vw !important;
+  }
+  
+  .standard-container {
+    flex-direction: column !important;
+    max-width: 100% !important;
+    gap: 6vw !important;
+    padding: 0 5vw !important;
+  }
+  
+  .standard-project-section .photo-column {
+    width: 100% !important;
+    order: 1 !important;
+  }
+  
+  .standard-project-section .photo-column img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 50vw !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    border-radius: 12px !important;
+  }
+  
+  .standard-project-section .info-column {
+    width: 100% !important;
+    order: 2 !important;
+    padding: 0 !important;
+  }
+  
+  .standard-project-section .project-subtitle {
+    font-size: 4.5vw !important;
+    margin-bottom: 2vw !important;
+  }
+  
+  .standard-project-section .project-title {
+    font-size: 5.5vw !important;
+    line-height: 1.3 !important;
+    margin-bottom: 4vw !important;
+  }
+  
+  .standard-project-section .project-title span {
+    white-space: normal !important;
+    display: inline-block !important;
+    padding: 0.5vw 2vw !important;
+    margin: 0 !important;
+  }
+  
+  .standard-project-section .project-description {
+    font-size: 4vw !important;
+    line-height: 1.6 !important;
+    margin-bottom: 4vw !important;
+  }
+  
+  .standard-project-section .project-funding {
+    font-size: 3.5vw !important;
+    margin-bottom: 5vw !important;
+    line-height: 1.5 !important;
+  }
+  
+  .standard-project-section .btn-project-cta {
+    font-size: 4.2vw !important;
+    padding: 3.5vw 7vw !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+  }
+}
+
+/* ============================================ */
+/* RESPONSYWNOŚĆ SEKCJI REALIZACJE - MOBILE */
+/* ============================================ */
 @media (max-width: 576px) {
   .realizations-header-container {
     flex-direction: column;
@@ -2161,23 +2267,15 @@ html, body {
 
 /* PODŚWIETLENIE SŁOWA */
 .highlighted-word {
-  position: relative;
+  display: inline-block;
   font-weight: 600;
   font-size: 1.875vw;
   color: white;
-  z-index: 1;
-}
-
-.highlighted-word::after {
-  content: '';
-  position: absolute;
-  left: -3%;
-  bottom: 0;
-  width: 600%;
-  height: 100%;
   background-color: var(--accent);
-  border-radius: 2vw;
-  
+  padding: 0.2vw 0.8vw;
+  border-radius: 40px;
+  white-space: nowrap;
+  margin: 0 0.3vw;
 }
 
 /* OBRAZ PO PRAWEJ */
@@ -2299,11 +2397,11 @@ html, body {
 
   .highlighted-word {
     font-size: 7.5vw !important;
-  }
-
-  .highlighted-word::after {
+    padding: 1vw 3vw !important;
     border-radius: 6vw !important;
   }
+
+  /* ::after usunięty - zamiast tego używamy background-color */
 }
 
 
@@ -2448,11 +2546,11 @@ html, body {
 
   .highlighted-word {
     font-size: 7.5vw !important;
-  }
-
-  .highlighted-word::after {
+    padding: 1vw 3vw !important;
     border-radius: 6vw !important;
   }
+
+  /* ::after usunięty - zamiast tego używamy background-color */
 
   /* --- SENIOR PROJECT SECTION --- */
   .senior-project-section {
@@ -2875,4 +2973,98 @@ html, body {
         orphans: 3;
         widows: 3;
     }
+}
+
+/* ============================= */
+/*    PATRONATY - RESPONSYWNOŚĆ  */
+/* ============================= */
+
+/* Tablet (do 1024px) */
+@media (max-width: 1024px) {
+  .patron-section {
+    margin-top: 4vw !important;
+    padding-bottom: 6vw !important;
+  }
+
+  .patron-title {
+    font-size: 1.5vw !important;
+    margin-bottom: 2vw !important;
+  }
+
+  .patron-logos {
+    gap: 2.5vw !important;
+  }
+
+  .patron-logo-box {
+    min-width: 11vw !important;
+    height: 5vw !important;
+    padding: 1vw 1.3vw !important;
+  }
+
+  .patron-logo-box img {
+    max-height: 3.5vw !important;
+  }
+}
+
+/* Mobile (do 768px) */
+@media (max-width: 768px) {
+  .patron-section {
+    margin-top: 6vw !important;
+    padding-bottom: 8vw !important;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .patron-title {
+    font-size: 4vw !important;
+    margin-bottom: 4vw !important;
+  }
+
+  .patron-logos {
+    gap: 4vw !important;
+    justify-content: center !important;
+  }
+
+  .patron-logo-box {
+    min-width: 25vw !important;
+    height: 15vw !important;
+    padding: 2vw 3vw !important;
+    border-radius: 3vw !important;
+  }
+
+  .patron-logo-box img {
+    max-height: 11vw !important;
+  }
+}
+
+/* Small Mobile (do 576px) */
+@media (max-width: 576px) {
+  .patron-section {
+    margin-top: 8vw !important;
+    padding-bottom: 10vw !important;
+  }
+
+  .patron-title {
+    font-size: 4.5vw !important;
+    margin-bottom: 5vw !important;
+    text-align: center;
+  }
+
+  .patron-logos {
+    flex-direction: column !important;
+    gap: 5vw !important;
+    align-items: center !important;
+  }
+
+  .patron-logo-box {
+    min-width: 60vw !important;
+    width: 60vw !important;
+    height: 20vw !important;
+    padding: 3vw 4vw !important;
+    border-radius: 4vw !important;
+  }
+
+  .patron-logo-box img {
+    max-height: 14vw !important;
+  }
 }

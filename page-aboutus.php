@@ -43,8 +43,8 @@ $social_links = get_field('aboutus_social_links');
   <div class="hero-content" style="position:relative; margin-left:16.66vw; max-width:55vw; z-index:2;">
     
   
-    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.2; font-size:3.2vw; font-family:'Manrope', sans-serif;">
-      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.3vw 1vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800;">
+    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.6; font-size:3.2vw; font-family:'Manrope', sans-serif;">
+      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.5vw 1.2vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800; display:inline-block; box-decoration-break:clone; -webkit-box-decoration-break:clone;">
         <?php echo esc_html($hero_title_highlight); ?>
       </span><?php echo esc_html($hero_title_rest); ?>
     </p>
@@ -108,12 +108,12 @@ $kim_description = get_field('aboutus_kim_description') ?: 'Bit System Sp. z o.o
 // Build array of 4 team member slots with default values
 $default_members = [
     1 => [
-        'photo' => ['url' => get_template_directory_uri() . '/images/webp/Component 19.webp', 'alt' => 'Michał Cichoracki'],
+        'photo' => ['url' => get_template_directory_uri() . '/images/webp/michal.webp', 'alt' => 'Michał Cichoracki'],
         'name' => 'Michał Cichoracki',
         'description' => 'Współzałożyciel Bit System Sp. z o.o., ekspert w zakresie organizacji wydarzeń międzynarodowych, misji gospodarczych i projektów badawczych. Posiada bogate doświadczenie w pracy z instytucjami publicznymi, uczelniami oraz organizacjami międzynarodowymi. Zajmuje się strategicznym planowaniem, koordynacją projektów oraz budowaniem partnerstw międzysektorowych. Ceniony za profesjonalizm, umiejętność pracy w złożonym środowisku i skuteczne łączenie różnych perspektyw.'
     ],
     2 => [
-        'photo' => ['url' => get_template_directory_uri() . '/images/webp/Component 20.webp', 'alt' => 'Dorota Markiewicz'],
+        'photo' => ['url' => get_template_directory_uri() . '/images/webp/dorota.webp', 'alt' => 'Dorota Markiewicz'],
         'name' => 'Dorota Markiewicz',
         'description' => 'Współzałożycielka Bit System Sp. z o.o., specjalistka w obszarze współpracy międzykulturowej, komunikacji i edukacji międzynarodowej. Przez lata angażowała się w projekty społeczne, kulturalne i naukowe o zasięgu krajowym i europejskim. W Bit System odpowiadała za rozwój koncepcji programowych, współpracę z ośrodkami naukowymi oraz realizację projektów wspierających dialog i integrację. Znana z zaangażowania, kreatywności i podejścia opartego na empatii i partnerstwie.'
     ],
@@ -165,7 +165,7 @@ for ($i = 1; $i <= 4; $i++) {
             <?php echo esc_html($kim_title); ?> 
         </div>
         <div class ="kj-subtitle">
-            <?php echo esc_html($kim_subtitle_before); ?><span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.3vw 1vw; border-top-left-radius:9999px; border-bottom-left-radius:9999px; color:white; font-weight:800;"><?php echo esc_html($kim_subtitle_highlight); ?></span>
+            <?php echo esc_html($kim_subtitle_before); ?><span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.5vw 1.2vw; border-top-left-radius:9999px; border-bottom-left-radius:9999px; color:white; font-weight:800; display:inline-block; box-decoration-break:clone; -webkit-box-decoration-break:clone;"><?php echo esc_html($kim_subtitle_highlight); ?></span>
         </div>
             <p class="kj-tresc">
                 <?php echo esc_html($kim_description); ?>
@@ -230,9 +230,9 @@ for ($i = 1; $i <= 4; $i++) {
             </div>
 
             <div class="person-row dorota-row">
-                <img 
-                    src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 20.webp"
-                    alt="Dorota Markiewicz" 
+                <img
+                    src="<?php echo get_template_directory_uri(); ?>/images/webp/dorota.webp"
+                    alt="Dorota Markiewicz"
                     class="person-image"
                 >
                 <div class="person-content">

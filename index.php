@@ -40,13 +40,13 @@ $template_uri = get_template_directory_uri();
       <?php echo esc_html($hero['hero_main_text']); ?>
     </p>
 
-    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.2; font-size:3.2vw; font-family:'Manrope', sans-serif;">
+    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.6; font-size:3.2vw; font-family:'Manrope', sans-serif;">
       <?php 
         $title_parts = explode(',', esc_html($hero['hero_title']), 2); // Zakładam, że podświetlony tekst to pierwszy element
         $highlight = trim($title_parts[0]);
         $rest_of_title = isset($title_parts[1]) ? trim($title_parts[1]) : '';
       ?>
-      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.3vw 1vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800;">
+      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.5vw 1.2vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800; display:inline-block; box-decoration-break:clone; -webkit-box-decoration-break:clone;">
         <?php echo $highlight; ?>
       </span><?php echo $rest_of_title; ?>
     </p>
@@ -76,23 +76,21 @@ $template_uri = get_template_directory_uri();
       <?php endwhile; ?>
     </div>
     <?php else : ?>
-    <!-- Fallback: Domyślne ikony -->
-    <div class="icon-row" style="margin-top:3vw; display:flex; gap:4vw; align-items:center; font-size:1vw; padding-bottom:5.78vw;">
-      <div style="text-align:center;">
-        <img src="<?php echo $template_uri; ?>/images/webp/ikon1.webp" alt="Biznes" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
-        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
-      </div>
-      <div style="text-align:center;">
-        <img src="<?php echo $template_uri; ?>/images/webp/ikon2.webp" alt="Innowacje" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
-        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
-      </div>
-      <div style="text-align:center;">
-        <img src="<?php echo $template_uri; ?>/images/webp/ikon3.webp" alt="Trendy" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
-        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
-      </div>
-      <div style="text-align:center;">
-        <img src="<?php echo $template_uri; ?>/images/webp/ikon4.webp" alt="Kultura" class="icon" style="height:5.46vw; margin-bottom:0.5vw; filter: brightness(0) invert(1);">
-        <p style="color:white; font-size:1vw; margin:0; font-family:'IBM Plex Sans', sans-serif;"></p>
+    <!-- Patronaty -->
+    <div class="patron-section" style="margin-top:3vw; padding-bottom:5.78vw;">
+      <p class="patron-title" style="color:white; font-size:1vw; font-family:'IBM Plex Sans', sans-serif; margin-bottom:1.5vw; opacity:0.9; font-weight:500;">
+        Nasze projekty objęte patronatem:
+      </p>
+      <div class="patron-logos" style="display:flex; gap:2vw; align-items:center; justify-content:flex-start; flex-wrap:wrap;">
+        <div class="patron-logo-box" style="background:white; padding:0.8vw 1.2vw; border-radius:8px; min-width:9vw; height:4vw; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(0,0,0,0.1);">
+          <img src="<?php echo $template_uri; ?>/images/urzad-bydgoszcz.png" alt="Urząd Miasta Bydgoszczy" style="max-height:3vw; max-width:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="patron-logo-box" style="background:white; padding:0.8vw 1.2vw; border-radius:8px; min-width:9vw; height:4vw; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(0,0,0,0.1);">
+          <img src="<?php echo $template_uri; ?>/images/wsglogo.png" alt="Wyższa Szkoła Gospodarki" style="max-height:3vw; max-width:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="patron-logo-box" style="background:white; padding:0.8vw 1.2vw; border-radius:8px; min-width:9vw; height:4vw; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(0,0,0,0.1);">
+          <img src="<?php echo $template_uri; ?>/images/forumlogo.png" alt="Forum Rozwoju Regionalnego" style="max-height:3vw; max-width:100%; width:auto; object-fit:contain;">
+        </div>
       </div>
     </div>
     <?php endif; ?>

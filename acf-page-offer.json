@@ -127,9 +127,9 @@
                     "key": "field_offer_card_1_link",
                     "label": "Link",
                     "name": "link",
-                    "type": "url",
+                    "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
                 }
             ]
         },
@@ -178,9 +178,9 @@
                     "key": "field_offer_card_2_link",
                     "label": "Link",
                     "name": "link",
-                    "type": "url",
+                    "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
                 }
             ]
         },
@@ -229,9 +229,9 @@
                     "key": "field_offer_card_3_link",
                     "label": "Link",
                     "name": "link",
-                    "type": "url",
+                    "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
                 }
             ]
         },
@@ -280,9 +280,9 @@
                     "key": "field_offer_card_4_link",
                     "label": "Link",
                     "name": "link",
-                    "type": "url",
+                    "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
                 }
             ]
         },
@@ -331,9 +331,9 @@
                     "key": "field_offer_card_5_link",
                     "label": "Link",
                     "name": "link",
-                    "type": "url",
+                    "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
                 }
             ]
         },
@@ -382,9 +382,9 @@
                     "key": "field_offer_card_6_link",
                     "label": "Link",
                     "name": "link",
-                    "type": "url",
+                    "type": "text",
                     "default_value": "",
-                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta)"
+                    "instructions": "Link do podstrony oferty (opcjonalny, domyślnie: /oferta). Możesz wpisać link względny (np. /oferta/konferencje) lub pełny URL (np. https://example.com)"
                 }
             ]
         },

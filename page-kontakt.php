@@ -19,8 +19,8 @@ $pageTitle = "Oferta";
   <div class="hero-content" style="position:relative; margin-left:16.66vw; max-width:55vw; z-index:2;">
     
   
-    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.2; font-size:3.2vw; font-family:'Manrope', sans-serif;">
-      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.3vw 1vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800;">
+    <p class="text-title" style="opacity:0.9; margin-bottom:1vw; line-height:1.6; font-size:3.2vw; font-family:'Manrope', sans-serif;">
+      <span class="text-highlight" style="background-color:#0BA0D880; opacity:0.9; padding:0.5vw 1.2vw; border-top-right-radius:9999px; border-bottom-right-radius:9999px; color:white; font-weight:800; display:inline-block; box-decoration-break:clone; -webkit-box-decoration-break:clone;">
         Skontaktuj się
       </span>, z nami
     </p>
@@ -188,7 +188,7 @@ $cta_color = '#0BA0D8';
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             width: 25vw; 
         ">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 19.webp" 
+            <img src="<?php echo get_template_directory_uri(); ?>/images/webp/michal.webp" 
                  alt="Zdjęcie Michała Cichorackiego" 
                  style="
                     width: 6vw; 
@@ -206,7 +206,7 @@ $cta_color = '#0BA0D8';
                     Prezes
                 </p>
                 <p style="font-size: 0.9vw; margin: 0;">
-                    <span style="color: <?php echo $cta_color; ?>;">&envelope;</span> michal.cichoracki@byd.pl
+                    michal.cichoracki@byd.pl
                 </p>
             </div>
         </div>
@@ -220,7 +220,7 @@ $cta_color = '#0BA0D8';
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             width: 25vw; 
         ">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/webp/Component 20.webp" 
+            <img src="<?php echo get_template_directory_uri(); ?>/images/webp/dorota.webp" 
                  alt="Zdjęcie Doroty Markiewicz" 
                  style="
                     width: 6vw; 
@@ -238,7 +238,7 @@ $cta_color = '#0BA0D8';
                     Pełnomocnik Prezesa
                 </p>
                 <p style="font-size: 0.9vw; margin: 0;">
-                    <span style="color: <?php echo $cta_color; ?>;">&envelope;</span> dorota.markiewicz@byd.pl
+                    dorota.markiewicz@byd.pl
                 </p>
             </div>
         </div>
