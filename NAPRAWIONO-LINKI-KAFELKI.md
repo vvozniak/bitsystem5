@@ -3,19 +3,48 @@
 ## 📋 Diagnoza problemu
 
 ### Problem:
-Linki w kafelkach oferty **nie działały**, ponieważ pole ACF typu `url` automatycznie usuwa linki względne (np. `/oferta/konferencje`). ACF wymaga dla pola typu `url` pełnego adresu z `http://` lub `https://`.
+Linki w kafelkach oferty **nie działały**, ponieważ:
+1. Pole ACF typu `url` automatycznie usuwa linki względne (np. `/oferta/konferencje`)
+2. Kod w `index.php` miał hardcoded linki `/oferta` zamiast używać pól ACF
 
 ### Objawy:
 - Pole "Link" w ACF jest puste (ACF usunęło wpisany link względny)
 - Kod używa wartości domyślnej: `/oferta`
 - W kodzie HTML widać: `<a href="/oferta"` zamiast właściwego linka
+- Wszystkie kafelki prowadzą do tej samej strony
 
 ### Przyczyna:
-Ktoś mógł zmienić typ pola "Link" z `text` na `url` w interfejsie WordPress Admin, co spowodowało usuwanie linków względnych.
+1. Ktoś mógł zmienić typ pola "Link" z `text` na `url` w interfejsie WordPress Admin
+2. Kod w `index.php` nie wykorzystywał pola `link` z ACF
 
 ## ✅ Rozwiązanie
 
-### 1. Weryfikacja typu pola w ACF JSON
+### 1. Naprawiono kod w index.php
+
+**Co zostało zmienione:**
+- Dodano funkcję pomocniczą `get_card_link()` która pobiera link z ACF
+- Zaktualizowano wszystkie 5 kart oferty aby używać `get_card_link()` zamiast hardcoded `/oferta`
+
+**Przed:**
+```php
+<a href="/oferta" class="offer-card dark-bg card-1">
+```
+
+**Po:**
+```php
+<a href="<?php echo get_card_link($card_1); ?>" class="offer-card dark-bg card-1">
+```
+
+**Nowa funkcja pomocnicza:**
+```php
+// Funkcja pomocnicza do pobierania linku karty
+function get_card_link($card) {
+    // Jeśli karta ma link, użyj go; w przeciwnym razie użyj domyślnego /oferta
+    return !empty($card['link']) ? esc_url($card['link']) : '/oferta';
+}
+```
+
+### 2. Weryfikacja typu pola w ACF JSON
 
 Plik `acf-page-offer.json` **POPRAWNIE** definiuje pole link jako typ `text`:
 
@@ -59,7 +88,7 @@ Plik `acf-page-offer.json` **POPRAWNIE** definiuje pole link jako typ `text`:
 
 ### 3. Aktualizacja wartości w polach
 
-Po synchronizacji pól:
+Po synchronizacji pól i po naprawie kodu:
 
 1. **Przejdź do strony Oferta:**
    - **Strony → Oferta → Edytuj**
@@ -160,13 +189,15 @@ echo '<a href="'.esc_url($card_link).'" class="kafelek" ...>
 | Element | Status | Uwagi |
 |---------|--------|-------|
 | Plik ACF JSON | ✅ POPRAWNY | Typ pola: "text" |
-| Kod w page-offer.php | ✅ POPRAWNY | Obsługuje linki względne i absolutne |
+| Kod w page-offer.php | ✅ POPRAWNY | Obsługuje linki względne i absolutne (linia 244) |
+| Kod w index.php | ✅ NAPRAWIONY | Dodano funkcję `get_card_link()` i zaktualizowano wszystkie karty |
 | Dokumentacja | ✅ DODANA | Ten plik + INSTRUKCJE-STRONA-OFERTA.md |
-| Wymagane działanie | ⚠️ WYMAGANE | Re-import ACF JSON w WordPress Admin |
+| Wymagane działanie | ⚠️ WYMAGANE | Re-import ACF JSON w WordPress Admin (jeśli typ pola został zmieniony) |
 
 ## 📚 Powiązane pliki:
 
-- `page-offer.php` - Szablon używający linków (linia 244)
+- `index.php` - Strona główna z kafelkami oferty (linie 491-503, 536-573) ✅ NAPRAWIONO
+- `page-offer.php` - Szablon używający linków (linia 244) ✅ JUŻ DZIAŁAŁO
 - `acf-page-offer.json` - Definicja pól ACF (linie 127-133, 178-184, 229-235, 280-286, 331-337, 382-388)
 - `INSTRUKCJE-STRONA-OFERTA.md` - Ogólne instrukcje konfiguracji
 - `ROZWIAZANIE-PAGE-OFFER.md` - Dokumentacja konwersji szablonu
@@ -175,5 +206,8 @@ echo '<a href="'.esc_url($card_link).'" class="kafelek" ...>
 
 **Data:** 2025-12-12  
 **Problem:** Linki w kafelkach oferty nie działają  
-**Rozwiązanie:** Re-import ACF JSON aby przywrócić typ pola "text"  
-**Status:** ✅ UDOKUMENTOWANE - wymaga działania w WordPress Admin
+**Rozwiązanie:**  
+1. ✅ Naprawiono kod w `index.php` - teraz używa pól ACF zamiast hardcoded linków
+2. ⚠️ Re-import ACF JSON aby przywrócić typ pola "text" (jeśli zostało zmienione na "url")
+
+**Status:** ✅ NAPRAWIONO W KODZIE - wymaga sprawdzenia/re-importu ACF w WordPress Admin
