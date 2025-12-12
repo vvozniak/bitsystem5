@@ -195,22 +195,23 @@ $hero_background = get_field('offer_hero_background_image');
         // Pobieranie kafelków z ACF z uzupełnieniem braków domyślnymi wartościami
         $cards = [];
         $defaults = [
-            1 => ['title'=>'Konferencje i wydarzenia','description'=>'Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów.','icon'=>'webp/conference (1) 1.webp','color'=>'#000C32','width'=>'35%','tile_url'=>''],
-            2 => ['title'=>'Misje gospodarcze i naukowe','description'=>'Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą.','icon'=>'webp/economic 1.webp','color'=>'#0BA0D8','width'=>'65%','tile_url'=>''],
-            3 => ['title'=>'Wsparcie projektów badawczych','description'=>'Pomagamy w organizacji projektów naukowych i eksperckich.','icon'=>'webp/scientist 1.webp','color'=>'#000C32','width'=>'50%','tile_url'=>''],
-            4 => ['title'=>'Inicjatywy międzykulturowe','description'=>'Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne.','icon'=>'webp/culture 1.webp','color'=>'#0BA0D8','width'=>'50%','tile_url'=>''],
-            5 => ['title'=>'Rozwiązania technologiczne dla eventów','description'=>'Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną.','icon'=>'webp/economic 1 (1).webp','color'=>'#000C32','width'=>'40%','tile_url'=>''],
-            6 => ['title'=>'Eventy specjalne','description'=>'Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych.','icon'=>'webp/economic 1 (2).webp','color'=>'#0BA0D8','width'=>'60%','tile_url'=>''],
+            1 => ['title'=>'Konferencje i wydarzenia','description'=>'Od planowania po realizację – zapewniamy pełną obsługę konferencji, spotkań i eventów.','icon'=>'webp/conference (1) 1.webp','color'=>'#000C32','width'=>'35%','tile_url_1'=>''],
+            2 => ['title'=>'Misje gospodarcze i naukowe','description'=>'Organizujemy i koordynujemy wyjazdy biznesowe, kulturalne i akademickie w kraju i za granicą.','icon'=>'webp/economic 1.webp','color'=>'#0BA0D8','width'=>'65%','tile_url_2'=>''],
+            3 => ['title'=>'Wsparcie projektów badawczych','description'=>'Pomagamy w organizacji projektów naukowych i eksperckich.','icon'=>'webp/scientist 1.webp','color'=>'#000C32','width'=>'50%','tile_url_3'=>''],
+            4 => ['title'=>'Inicjatywy międzykulturowe','description'=>'Budujemy mosty między różnymi środowiskami poprzez projekty edukacyjne, szkoleniowe i integracyjne.','icon'=>'webp/culture 1.webp','color'=>'#0BA0D8','width'=>'50%','tile_url_4'=>''],
+            5 => ['title'=>'Rozwiązania technologiczne dla eventów','description'=>'Zapewniamy nowoczesne rozwiązania technologiczne dla eventów, obejmujące obsługę techniczną.','icon'=>'webp/economic 1 (1).webp','color'=>'#000C32','width'=>'40%','tile_url_5'=>''],
+            6 => ['title'=>'Eventy specjalne','description'=>'Organizujemy spotkania integracyjne dla firm, uroczystości tematyczne oraz bale dla dzieci i dorosłych.','icon'=>'webp/economic 1 (2).webp','color'=>'#0BA0D8','width'=>'60%','tile_url_6'=>''],
         ];
         for ($i = 1; $i <= 6; $i++) {
             $card_raw = get_field('offer_card_' . $i);
             $card = is_array($card_raw) ? $card_raw : [];
             
             
-            // Filtrujemy puste wartości, ale zachowujemy 'tile_url' nawet jeśli jest pusty
+            // Filtrujemy puste wartości, ale zachowujemy 'tile_url_X' nawet jeśli jest pusty
             $filtered_card = [];
             foreach ($card as $key => $value) {
-                if ($key === 'tile_url' || ($value !== null && $value !== '')) {
+                // Zachowaj pole tile_url dla każdej karty (tile_url, tile_url_1, tile_url_2, etc.)
+                if (strpos($key, 'tile_url') === 0 || ($value !== null && $value !== '')) {
                     $filtered_card[$key] = $value;
                 }
             }
@@ -223,6 +224,8 @@ $hero_background = get_field('offer_hero_background_image');
         echo '<div style="overflow:hidden;">';
         for ($i = 0; $i < count($cards); $i++) {
             $b = $cards[$i];
+            $card_num = $i + 1; // Card number (1-6)
+            
             $card_color = isset($b['color']) ? $b['color'] : '#000C32';
             $card_width = isset($b['width']) ? $b['width'] : '50%';
             $card_title = isset($b['title']) ? $b['title'] : '';
@@ -236,8 +239,14 @@ $hero_background = get_field('offer_hero_background_image');
                 $icon_url = get_template_directory_uri().'/images/'.$b['icon'];
             }
             
-            // Pobierz link z ACF
-            $card_link = isset($b['tile_url']) && trim($b['tile_url']) !== '' ? $b['tile_url'] : '';
+            // Pobierz link z ACF - sprawdź nową nazwę pola (tile_url_X) oraz starą (tile_url) dla kompatybilności
+            $card_link = '';
+            $tile_url_key = 'tile_url_' . $card_num;
+            if (isset($b[$tile_url_key]) && trim($b[$tile_url_key]) !== '') {
+                $card_link = $b[$tile_url_key];
+            } elseif (isset($b['tile_url']) && trim($b['tile_url']) !== '') {
+                $card_link = $b['tile_url'];
+            }
             
             // Jeśli jest link - użyj <a>, jeśli nie - użyj <div>
             $tag = $card_link ? 'a' : 'div';

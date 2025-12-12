@@ -1,3 +1,7 @@
 /node_modules
 /.idea
 /.vscode
+*.backup
+*.old
+acf-page-offer-updated.json
+acf-page-offer-new.json
