@@ -61,6 +61,8 @@ Każdy kafelek (`offer_card_1` do `offer_card_6`) zawiera:
 - `color` - Kolor tła (hex)
 - `width` - Szerokość (np. "35%", "65%")
 - `link` - Link do podstrony (opcjonalny, domyślnie: /oferta)
+  - ⚠️ **WAŻNE:** To pole MUSI być typu "text" (nie "url") aby akceptować linki względne jak `/oferta/konferencje`
+  - Zobacz: `NAPRAWIONO-LINKI-KAFELKI.md` dla szczegółów
 
 #### Sekcja "Nasze podejście":
 - `offer_approach_subtitle` - Podtytuł
@@ -111,6 +113,24 @@ Każdy kafelek (`offer_card_1` do `offer_card_6`) zawiera:
    - Odśwież stronę edycji
    - Sprawdź czy szablon "Oferta" jest wybrany w prawym panelu
 
+### Problem: Linki w kafelkach nie działają (zawsze /oferta)
+
+**Objawy:**
+- Wpisujesz link względny (np. `/oferta/konferencje`) w pole "Link" kafelka
+- Po zapisaniu pole jest puste
+- Wszystkie kafelki prowadzą do `/oferta` zamiast właściwych linków
+
+**Przyczyna:**
+Pole "Link" zostało błędnie ustawione jako typ "URL" zamiast "Text". ACF usuwa linki względne z pól typu "URL".
+
+**Rozwiązanie:**
+Zobacz szczegółowe instrukcje w pliku: **`NAPRAWIONO-LINKI-KAFELKI.md`**
+
+Krótko:
+1. Re-importuj plik `acf-page-offer.json` w **Custom Fields → Tools → Import**
+2. Lub ręcznie zmień typ pola z "URL" na "Text" w każdym kafelku
+3. Wypełnij pola linków ponownie
+
 ## 📊 Porównanie z page-aboutus.php:
 
 | Element | page-aboutus.php | page-offer.php | Status |
@@ -149,6 +169,7 @@ Każdy kafelek (`offer_card_1` do `offer_card_6`) zawiera:
 
 - `page-offer.php` - Główny szablon
 - `acf-page-offer.json` - Konfiguracja pól ACF (426 linii)
+- `NAPRAWIONO-LINKI-KAFELKI.md` - 🔧 Rozwiązanie problemu z linkami w kafelkach
 - `header.php` - Nagłówek strony
 - `footer.php` - Stopka strony
 - `contact.php` - Sekcja kontaktowa
@@ -156,5 +177,6 @@ Każdy kafelek (`offer_card_1` do `offer_card_6`) zawiera:
 ---
 
 **Data:** 2024-12-10  
-**Wersja:** 1.0  
+**Aktualizacja:** 2025-12-12 (dodano rozwiązanie problemu z linkami)
+**Wersja:** 1.1  
 **Zgodność:** WordPress 5.0+, ACF 5.0+
