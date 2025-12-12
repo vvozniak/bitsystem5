@@ -224,6 +224,8 @@ $hero_background = get_field('offer_hero_background_image');
         echo '<div style="overflow:hidden;">';
         for ($i = 0; $i < count($cards); $i++) {
             $b = $cards[$i];
+            $card_num = $i + 1; // Card number (1-6)
+            
             $card_color = isset($b['color']) ? $b['color'] : '#000C32';
             $card_width = isset($b['width']) ? $b['width'] : '50%';
             $card_title = isset($b['title']) ? $b['title'] : '';
@@ -237,9 +239,9 @@ $hero_background = get_field('offer_hero_background_image');
                 $icon_url = get_template_directory_uri().'/images/'.$b['icon'];
             }
             
-            // Pobierz link z ACF - sprawdź zarówno 'tile_url' jak i 'tile_url_X'
+            // Pobierz link z ACF - sprawdź nową nazwę pola (tile_url_X) oraz starą (tile_url) dla kompatybilności
             $card_link = '';
-            $tile_url_key = 'tile_url_' . ($i + 1); // $i is 0-indexed, cards are 1-indexed
+            $tile_url_key = 'tile_url_' . $card_num;
             if (isset($b[$tile_url_key]) && trim($b[$tile_url_key]) !== '') {
                 $card_link = $b[$tile_url_key];
             } elseif (isset($b['tile_url']) && trim($b['tile_url']) !== '') {
