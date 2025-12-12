@@ -404,7 +404,8 @@
             "key": "field_hero_cta_link",
             "label": "CTA - Link",
             "name": "hero_cta_link",
-            "type": "url",
+            "type": "text",
+            "instructions": "Link przycisku CTA - możesz użyć linku względnego (np. /oferta/konferencje) lub pełnego URL",
             "conditional_logic": [
                 [
                     {
@@ -656,7 +657,8 @@
             "key": "field_highlight_cta_link",
             "label": "CTA - Link",
             "name": "highlight_cta_link",
-            "type": "url",
+            "type": "text",
+            "instructions": "Link przycisku CTA - możesz użyć linku względnego (np. /oferta/konferencje) lub pełnego URL",
             "conditional_logic": [
                 [
                     {
@@ -815,7 +817,8 @@
             "key": "field_standard_cta_link",
             "label": "CTA - Link",
             "name": "standard_cta_link",
-            "type": "url",
+            "type": "text",
+            "instructions": "Link przycisku CTA - możesz użyć linku względnego (np. /oferta/konferencje) lub pełnego URL",
             "conditional_logic": [
                 [
                     {

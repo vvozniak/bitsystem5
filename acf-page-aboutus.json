@@ -238,9 +238,9 @@
             "key": "field_aboutus_what_cta_link",
             "label": "Co robimy - CTA link",
             "name": "aboutus_what_cta_link",
-            "type": "url",
+            "type": "text",
             "default_value": "#oferta",
-            "instructions": "Link przycisku CTA"
+            "instructions": "Link przycisku CTA - możesz użyć linku względnego (np. /oferta) lub pełnego URL"
         },
         {
             "key": "field_aboutus_what_video",
@@ -302,9 +302,9 @@
             "key": "field_aboutus_realizations_cta_link",
             "label": "Realizacje - CTA link",
             "name": "aboutus_realizations_cta_link",
-            "type": "url",
+            "type": "text",
             "default_value": "/realizacje",
-            "instructions": "Link przycisku CTA"
+            "instructions": "Link przycisku CTA - możesz użyć linku względnego (np. /realizacje) lub pełnego URL"
         }
     ],
     "location": [

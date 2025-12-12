@@ -49,8 +49,8 @@
             "key": "field_offer_single_cta_link",
             "label": "Link przycisku CTA",
             "name": "offer_single_cta_link",
-            "type": "url",
-            "instructions": "Opcjonalne: adres URL do którego prowadzi przycisk CTA. Domyślnie: strona kontaktowa (/kontakt)",
+            "type": "text",
+            "instructions": "Adres URL do którego prowadzi przycisk CTA - możesz użyć linku względnego (np. /kontakt) lub pełnego URL. Domyślnie: strona kontaktowa (/kontakt)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
