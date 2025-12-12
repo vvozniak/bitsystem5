@@ -40,7 +40,7 @@ Linki w kafelkach oferty **nie działały**, ponieważ:
 // Funkcja pomocnicza do pobierania linku karty
 function get_card_link($card) {
     // Jeśli karta ma link, użyj go; w przeciwnym razie użyj domyślnego /oferta
-    return !empty($card['link']) ? esc_url($card['link']) : '/oferta';
+    return !empty($card['link']) ? esc_url($card['link']) : esc_url('/oferta');
 }
 ```
 
